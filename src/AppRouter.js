@@ -1,13 +1,14 @@
 
-import './App.css';
+import './styles/App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Header from './Header';
-import Home from './Home';
-import About from './About';
-import Individual from './Individual';
-import Favourite from './Favourite';
-import Footer from './Footer';
-import Error from './Error';
+import Header from './components/Header';
+import Home from './components/Home';
+import SingleMovie from './components/SingleMovie';
+import About from './components/About';
+import Individual from './components/Individual';
+import Favourite from './components/Favourite';
+import Footer from './components/Footer';
+import Error from './components/Error';
 
 
 
@@ -20,6 +21,7 @@ function AppRouter() {
       <main>
         <Routes>
           <Route path = "/" exact element ={<Home />}  />
+          <Route path= "movie/:id" element ={<SingleMovie />} />
           <Route path = "/about"  element ={<About />} />
           <Route path = "/individual" element ={<Individual /> } />
           <Route path = "/favourite" element ={< Favourite /> } />
