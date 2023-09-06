@@ -1,4 +1,12 @@
+@use "variables";
+@use "header";
 @use "home";
+@use "about";
+@use "error";
+@use "favourite";
+@use "individual";
+@use "footer";
+
 
 .active{
     color: red;
