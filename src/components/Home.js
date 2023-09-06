@@ -29,21 +29,39 @@ function Home() {
           <>
             {movieList === "" ? (
               <h1>Fetching Movie..</h1>
-            ) : (
+            ) :
+            window.innerWidth < 1024 ? (
                 
-              <section className="movie-list">
-                {console.log(movieList)}
+                <section className="movie-list">
+                
                 {movieList.map((movie) => (
+
                   <article className="movie-article" key={movie.id}>
-                    
-                    {movie.title}
+                    <div className="card">
+                    <p className="rate">{movie.vote_average}</p>
                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                    </div>
+                    <h2 className="card-title">{movie.title}</h2>
+                    {console.log(movie)}
+                    <p>{movie.release_date}</p>
                     </article>
                 ))}
-              </section>
-            )}
+                </section>
+            ):(
+                <section className="desktop-list movie-list">
+            
+                {movieList.map((movie) => (
+                <article className="movie-article" key={movie.id}>
+                <p className="rate">{movie.vote_average}</p>
+                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                <h2>{movie.title}</h2>
+                <p>{movie.release_date}</p>
+                </article>
+                ))}
+                </section>)
+        }
           </>
         );
-      }
+}
 
 export default Home;
