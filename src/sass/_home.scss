@@ -1,0 +1,14 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .movie-article {
+        width: 10rem;
+        img {
+            width: 10rem;
+            height: auto;
+        }
+    }
+
+}
