@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 function Home() {
 
         // Create a state variable to hold the tasks
         const [movieList, setMovieList] = useState([]);
+        const isDesktop = useMediaQuery('(min-width: 1024px)');
         
         // Call the fetchTasks function when the component is first rendered
         useEffect(() => {
@@ -30,7 +32,7 @@ function Home() {
             {movieList === "" ? (
               <h1>Fetching Movie..</h1>
             ) :
-            window.innerWidth < 1024 ? (
+            isDesktop ? (
                 
                 <section className="movie-list">
                 
@@ -42,7 +44,7 @@ function Home() {
                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                     </div>
                     <h2 className="card-title">{movie.title}</h2>
-                    {console.log(movie)}
+                    <p>desktop</p>
                     <p>{movie.release_date}</p>
                     </article>
                 ))}
