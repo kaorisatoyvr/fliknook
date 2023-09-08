@@ -7,7 +7,7 @@ function Home() {
 
   // Create a state variable to hold the tasks
   const [movieList, setMovieList] = useState([]);
-        const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   // Call the fetchTasks function when the component is first rendered
   useEffect(() => {

@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+.header-logo {
+    width: 5rem;
+    margin: .5rem 0 0 2rem; 
+}
+
+.desktop-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.desktop-nav {
+    position: relative;
+    margin-right: 2rem;
+    ul {
+        font-size: 1.25rem;
+        display: flex;
+        position: relative;
+        margin: 1rem;
+        list-style: none;
+        li {
+            padding: 1rem;
+            font-weight: 600;
+            li:hover {
+                color: $main-color;
+            }
+            a {
+                text-decoration: none;
+                color: $white;
+                a:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
