@@ -1,13 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import useMediaQuery from '../hooks/useMediaQuery';
 import MovieCarousel from './MovieCarousel';
 
 function Home() {
 
   // Create a state variable to hold the tasks
   const [movieList, setMovieList] = useState([]);
-        const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   // Call the fetchTasks function when the component is first rendered
   useEffect(() => {
@@ -39,28 +37,28 @@ function Home() {
       {movieList === "" ? (
         <h1>Fetching Movie..</h1>
       ) :
-        isDesktop ? (
+        window.innerWidth < 1024 ? (
 
           <section className="movie-list">
 
             {movieList.map((movie) => (
 
-                  <article className="movie-article" key={movie.id}>
-                    <div className="card">
-                    <p className="rate">{movie.vote_average}</p>
-                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-                    </div>
-                    <h2 className="card-title">{movie.title}</h2>
-                    <p>desktop</p>
-                    <p>{movie.release_date}</p>
-                    </article>
-                ))}
-                </section>
-            ):(
-                <section className="desktop-list movie-list">
-            
-                {movieList.map((movie) => (
-                <article className="movie-article" key={movie.id}>
+              <article className="movie-article" key={movie.id}>
+                <div className="card">
+                  <p className="rate">{movie.vote_average}</p>
+                  <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                </div>
+                <h2 className="card-title">{movie.title}</h2>
+                {console.log(movie)}
+                <p>{movie.release_date}</p>
+              </article>
+            ))}
+          </section>
+        ) : (
+          <section className="desktop-list movie-list">
+
+            {movieList.map((movie) => (
+              <article className="movie-article" key={movie.id}>
                 <p className="rate">{movie.vote_average}</p>
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                 <h2>{movie.title}</h2>
