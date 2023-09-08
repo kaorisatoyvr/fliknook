@@ -15,7 +15,7 @@ function Header() {
                     <NavLink to ="/about">About</NavLink>
                     </li>
                     <li>
-                    <NavLink to ="/individual">Individual</NavLink>
+                    <NavLink to="/movie/:id">Individual</NavLink>
                     </li>
                     <li>
                     <NavLink to ="/favourite">Favourite</NavLink>
