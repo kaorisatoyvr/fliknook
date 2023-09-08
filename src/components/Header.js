@@ -24,9 +24,6 @@ function Header() {
                  <NavLink to ="/about">About</NavLink>
                  </li>
                  <li>
-                 <NavLink to ="/individual">Individual</NavLink>
-                 </li>
-                 <li>
                  <NavLink to ="/favourite">Favourite</NavLink>
                  </li>
              </ul>
@@ -44,7 +41,6 @@ function Header() {
                     <li>
                     <NavLink to ="/about">About</NavLink>
                     </li>
-                    
                     <li>
                     <NavLink to ="/favourite">Favourite</NavLink>
                     </li>
