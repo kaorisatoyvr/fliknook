@@ -1,4 +1,5 @@
 @use "variables";
+@use "roots";
 @use "header";
 @use "home";
 @use "about";
@@ -8,6 +9,3 @@
 @use "footer";
 
 
-.active{
-    color: red;
-}
