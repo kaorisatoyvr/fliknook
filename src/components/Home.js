@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
 import MovieCarousel from './MovieCarousel';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -44,8 +45,8 @@ function Home() {
           <section className="movie-list">
 
             {movieList.map((movie) => (
-
-                  <article className="movie-article" key={movie.id}>
+               <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
+                 <article className="movie-article" key={movie.id}>
                     <div className="card">
                     <p className="rate">{movie.vote_average}</p>
                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
@@ -54,18 +55,23 @@ function Home() {
                     <p>desktop</p>
                     <p>{movie.release_date}</p>
                     </article>
+                  </Link>
+
                 ))}
                 </section>
             ):(
                 <section className="desktop-list movie-list">
             
                 {movieList.map((movie) => (
+                 <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
+                
                 <article className="movie-article" key={movie.id}>
                 <p className="rate">{movie.vote_average}</p>
                 <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                 <h2>{movie.title}</h2>
                 <p>{movie.release_date}</p>
               </article>
+              </Link>
             ))}
           </section>)
       }
