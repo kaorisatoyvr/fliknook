@@ -14,7 +14,7 @@
     height: auto; 
 }
 
-.error__btn{
+.error__btn-desktop{
     margin-top: 3rem; 
     padding: 1rem 2rem;
     background-color:#D9CEFE;
@@ -32,6 +32,21 @@
     &:hover{
         background-color:$white;
         
+    }
+
+    .error__btn-mobile{
+        padding: 0.5rem 1rem;
+        background-color: #D9CEFE;
+        color: $black;
+        font-size: medium;
+        font-family: $poppins;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-transform: uppercase;
+
     }
      
   
