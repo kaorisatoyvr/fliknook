@@ -1,13 +1,89 @@
+@use "variables" as *;
+//  For Desktop
 .movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 20px 50px 10px 50px;
+    gap: 2rem;
+}
+.img-container {
+    position: relative;
+    max-width: 280px;
+    max-height: 435px;
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.2s;   
+    }
+    .rate {
+        position: absolute;
+        margin: .75rem;
+        right: 0;
+        color: $main-color;
+        font-weight: 700;
+        font-size: 2rem;
+        z-index: 999;
+    }   
+    :hover {
+        cursor: pointer;
+    }
+    .overlay {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.400);
+        background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+        opacity: 0;
+        transition: .5s ease;
+        padding: 10px;
+        h2 {
+            font-size: 22px;
+            margin: 2rem 0 0 0;
+        }
+        p {
+            margin-top: 5px;
+        }
+        a {
+            text-align: center;
+        }
+    } 
+}
+.overview {
+    display: -webkit-box;
+    font-style: italic;;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.img-container:hover .overlay {
+    opacity: 1;
+}
+.more-info p{
+    width: 60%;
+    font-size: 20px;
+    border: solid 0.7px $white;
+    margin: 5px auto;
+    padding: 2px;
+}
 
-    .movie-article {
-        width: 10rem;
+// For Mobile
+.mobile-movie-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 30px 10px 30px;
+    gap: 1rem;
+    .mobile-img-container {
+        .mobile-rate {
+            position: absolute;
+            margin: 1rem;
+            color: $main-color;
+            font-weight: 700;
+            font-size: 2rem;
+            z-index: 999;
+        }
         img {
-            width: 10rem;
-            height: auto;
+            position: relative;
+            width: 100%;
         }
     }
 }
