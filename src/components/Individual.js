@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function Individual() {
-    const [currentMovieDetail, setMovieDetail ] = useState();
+    const [currentMovieDetail, setMovieDetail ] = useState({backdrop_path:""});
     const { id } = useParams();
 
     useEffect(() => {
@@ -18,9 +18,9 @@ function Individual() {
           };
           const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&page=1`, options);
           const data = await response.json();
-          if (data.results){
-          let twelve = data.results.slice(0, 12);
-          setMovieDetail(twelve);
+          if (data){
+       
+          setMovieDetail(data);
           }
           else {
             // Handle the case where data.results is undefined
@@ -30,16 +30,13 @@ function Individual() {
         };
         getMovieList();
       }, [id]);
-      console.log('currentMovieDetail:', currentMovieDetail);
-
-
-
-
-
-
+     
     return (
-        <div>
-             Individual {id} 
+        <div className ="current_movie">
+            <div className= "movie__intro">
+            <img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${currentMovieDetail.backdrop_path}`} alt= "current movie" />
+            </div>
+            
         </div>
     )
 }
