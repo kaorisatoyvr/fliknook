@@ -34,19 +34,26 @@ function Home() {
             {/* CAROUSEL */}
 
             <MovieCarousel movieList={movieList} />
+            <div>
+                <Link to="/movie/popular">Popular</Link>
+                <Link to="/movie/top_rated">Top Rated</Link>
+                <Link to="/movie/now_playing">Now Playing</Link>
+                <Link to="/movie/upcoming">Upcoming</Link>
+            </div>
 
             {movieList === "" ? (
                 <h1>Fetching Movie..</h1>
             ) :
                 // Desktop < 1024px
                 isDesktop ? (
+
                     <section className="movie-list">
                         {movieList.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
                                     <p className="rate">{movie.vote_average}</p>
-                                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-                                    
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+
                                     <div className="overlay">
                                         <h2 className="card-title">{movie.title}</h2>
                                         <p>{movie.release_date}</p>
@@ -64,10 +71,10 @@ function Home() {
                         {movieList.map((movie) => (
                             <article className="movie-article" key={movie.id}>
                                 <div className="mobile-img-container">
-                                <p className="mobile-rate">{movie.vote_average}</p>
-                                <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
-                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-                                </Link>
+                                    <p className="mobile-rate">{movie.vote_average}</p>
+                                    <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
+                                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                                    </Link>
                                 </div>
                                 <h2>{movie.title}</h2>
                                 <p>mobile</p>
