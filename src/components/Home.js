@@ -46,7 +46,7 @@ function Home() {
             ) :
                 // Desktop < 1024px
                 isDesktop ? (
-
+                    
                     <section className="movie-list">
                         {movieList.map((movie) => (
                             <article key={movie.id}>
