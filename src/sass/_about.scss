@@ -1,0 +1,13 @@
+@use "variables" as *;
+.about {
+    width: 70%;
+    margin: 0 auto;
+    h1 {
+        text-align: center;
+    }
+}
+
+.who-we-are{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
