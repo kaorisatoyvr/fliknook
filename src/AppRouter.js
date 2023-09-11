@@ -3,7 +3,7 @@ import './sass/styles.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
-import Movie from './components/Movie';
+// import Movie from './components/Movie';
 import About from './components/About';
 import Individual from './components/Individual';
 import Favourite from './components/Favourite';
@@ -21,7 +21,7 @@ function AppRouter() {
         <main>
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/movie/:type" element={<Movie />} />
+            {/* <Route path="/movie/:type" element={<Movie />} /> */}
             <Route path="/about" element={<About />} />
             <Route path="movie/:id" element={<Individual />} />
             <Route path="/favourite" element={< Favourite />} />

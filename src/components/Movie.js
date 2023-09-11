@@ -24,25 +24,26 @@ const Movie = () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?language=en-US&page=1`, options);
         const data = await response.json();
         console.log(data.results);
-        let twelve = data.results.slice(0, 12);
-        setMovieType(twelve);
+        // let twelve = data.results.slice(0, 12);
+        setMovieType(data.results);
+
     };
     getMovieType();
 }, [type]);
-
+let twelve = movieType.slice(0, 12);
 
 
 
   return (
     <>
 
-    {movieType === "" ? (
+    {twelve === "" ? (
         <h1>Fetching Movie..</h1>
     ) :
         // Desktop < 1024px
         isDesktop ? (
             <section className="movie-list">
-                {movieType.map((movie) => (
+                {twelve.map((movie) => (
                     <article key={movie.id}>
                         <div className="img-container">
                             <p className="rate">{movie.vote_average}</p>
@@ -62,7 +63,7 @@ const Movie = () => {
             // mobile > 1024px
             <section className="mobile-movie-list">
 
-                {movieType.map((movie) => (
+                {twelve.map((movie) => (
                     <article className="movie-article" key={movie.id}>
                         <div className="mobile-img-container">
                         <p className="mobile-rate">{movie.vote_average}</p>

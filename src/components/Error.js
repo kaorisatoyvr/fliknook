@@ -9,8 +9,9 @@ function Error() {
     const isDesktop = useMediaQuery('(min-width: 1024px)');
     return (
         <div class="error__container">
-            <img className="error__img" src={error} alt="error" />
-            <NavLink to="/">
+            <NavLink className="err_link" to="/">
+            <img className={isDesktop ? "error__img-desktop error" : "error__img-mobile error"} src={error} alt="error" />
+            
                 {isDesktop ? (
                     <button className='error__btn-desktop'> Go back </button>
                 ) : (

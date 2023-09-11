@@ -6,14 +6,21 @@ import { Link } from 'react-router-dom';
 
 function Home() {
 
+
     // Create a state variable to hold the tasks
     const [movieList, setMovieList] = useState([]);
+    const [movieType, setMovieType] = useState("popular");
     const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+    const onValueChange = (event) => {
+        setMovieType(event.target.value);
+    }
 
     // Call the fetchTasks function when the component is first rendered
     useEffect(() => {
         // Function to fetch the tasks from the API
         const getMovieList = async () => {
+
             const options = {
                 method: 'GET',
                 headers: {
@@ -21,34 +28,42 @@ function Home() {
                     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OWRhNGRhMjUzNzM3YzJhNmM4ZjgzNGE5ZDFkNTA1OCIsInN1YiI6IjY0Zjc4YTY4OGUyMGM1MGNkM2VkNWQzNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Se1QwCZIdiuqU4pRDcLmY14CsjIPYaiPuvE_Q8OEjMQ'
                 }
             };
-            const response = await fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1", options);
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieType}?language=en-US&page=1`, options);
             const data = await response.json();
-            let twelve = data?.results.slice(0, 12);
-            setMovieList(twelve);
+        
+
+            setMovieList(data.results);
         };
         getMovieList();
-    }, []);
-
+    }, [movieType]);
+    let twelve = movieList?.slice(0, 12);
     return (
         <>
             {/* CAROUSEL */}
 
-            <MovieCarousel movieList={movieList} />
-            <div>
-                <Link to="/movie/popular">Popular</Link>
-                <Link to="/movie/top_rated">Top Rated</Link>
-                <Link to="/movie/now_playing">Now Playing</Link>
-                <Link to="/movie/upcoming">Upcoming</Link>
-            </div>
+            <MovieCarousel />
+            <form>
+                <label><input type="radio" value="popular" name="movie-type" checked={movieType === "popular"}
+                    onChange={onValueChange} /> Popular</label>
+                <label><input type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"}
+                    onChange={onValueChange} />Top Rated </label>
+                <label><input type="radio" value="now_playing" name="movie-type" checked={movieType === "now_playing"}
+                    onChange={onValueChange} />Now Playing </label>
+                <label> <input type="radio" value="upcoming" name="movie-type" checked={movieType === "upcoming"}
+                    onChange={onValueChange} />Upcoming</label>
 
-            {movieList === "" ? (
+
+            </form>
+            
+
+            {twelve === "" ? (
                 <h1>Fetching Movie..</h1>
             ) :
                 // Desktop < 1024px
                 isDesktop ? (
-                    
+
                     <section className="movie-list">
-                        {movieList.map((movie) => (
+                        {twelve.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
                                     <p className="rate">{movie.vote_average}</p>
@@ -68,7 +83,7 @@ function Home() {
                     // mobile > 1024px
                     <section className="mobile-movie-list">
 
-                        {movieList.map((movie) => (
+                        {twelve.map((movie) => (
                             <article className="movie-article" key={movie.id}>
                                 <div className="mobile-img-container">
                                     <p className="mobile-rate">{movie.vote_average}</p>

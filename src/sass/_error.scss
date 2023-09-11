@@ -1,19 +1,30 @@
 @use "variables" as *;
 
 .error__container{
+ 
+    height: 100vh;
+    text-align: center;
+}
+
+.err_link {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
 }
-
-.error__img{
-    width: 30%; 
-    max-width: 100%;
-    height: auto; 
+.error__img-desktop{ 
+   width:30%;
 }
+.error__img-mobile{ 
+    width:60vw;
+    
+ }
 
+ .error {
+    margin: 0 auto;
+    height: auto;
+ }
+ 
 .error__btn-desktop{
     margin-top: 3rem; 
     padding: 1rem 2rem;
