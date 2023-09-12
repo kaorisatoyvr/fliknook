@@ -48,12 +48,19 @@ function Home() {
                         {movieList.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
-                                    <div className="rate"  style={{ width: 70, height: 70 }}>
+                                    <div className="rate"  style={{ width: 60, height: 60 }}>
                                         <CircularProgressbar 
                                         value={Number(movie?.vote_average/ 10)} 
                                         maxValue={1} 
                                         text={`${movie.vote_average * 10}%`} 
+                                        background
+                                        backgroundPadding={6}
+
                                         styles={buildStyles({
+                                            backgroundColor: "#0eede4",
+                                            textColor: "#fff",
+                                            pathColor: "#fff",
+                                            trailColor: "transparent",
                                             // Rotation of path and trail, in number of turns (0-1)
                                             // rotation: 0.25,
                                         
@@ -64,8 +71,7 @@ function Home() {
                                             textSize: '28px',
                                             fontFamily: 'Poppins',
                                             fontWeight: 700,
-                                            
-                                        
+
                                             // How long animation takes to go from one percentage to another, in seconds
                                             pathTransitionDuration: 0.5,
                                         
@@ -73,13 +79,12 @@ function Home() {
                                             // pathTransition: 'none',
                                         
                                             // Colors
-                                            pathColor: `rgba(14, 237, 228, ${movie.vote_average / 10})`,
-                                            textColor: '#0eede4',
-                                            trailColor: '#d6d6d6',
+                                            pathColor: '#000000',
+                                            textColor: '#000000',
+                                            trailColor: `rgba(14, 237, 228, ${movie.vote_average / 10})`,
                                             backgroundColor: '#0eede4',
                                           })}
                                          />;
-                        
                                     </div>
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
 
