@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
 import MovieCarousel from './MovieCarousel';
 import { Link } from 'react-router-dom';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 function Home() {
 
@@ -11,6 +13,7 @@ function Home() {
     const [movieList, setMovieList] = useState([]);
     const [movieType, setMovieType] = useState("popular");
     const isDesktop = useMediaQuery('(min-width: 1024px)');
+    const value = 0.66;
 
     const onValueChange = (event) => {
         setMovieType(event.target.value);
@@ -72,7 +75,39 @@ function Home() {
                         {twelve.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
-                                    <p className="rate">{movie.vote_average}</p>
+                                    <div className="rate"  style={{ width: 70, height: 70 }}>
+                                        <CircularProgressbar 
+                                        value={Number(movie?.vote_average/ 10)} 
+                                        maxValue={1} 
+                                        text={`${movie.vote_average * 10}%`} 
+                                        styles={buildStyles({
+                                            // Rotation of path and trail, in number of turns (0-1)
+                                            // rotation: 0.25,
+                                        
+                                            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                                            strokeLinecap: 'butt',
+                                        
+                                            // Text size
+                                            textSize: '28px',
+                                            fontFamily: 'Poppins',
+                                            fontWeight: 700,
+                                            
+                                        
+                                            // How long animation takes to go from one percentage to another, in seconds
+                                            pathTransitionDuration: 0.5,
+                                        
+                                            // Can specify path transition in more detail, or remove it entirely
+                                            // pathTransition: 'none',
+                                        
+                                            // Colors
+                                            pathColor: `rgba(14, 237, 228, ${movie.vote_average / 10})`,
+                                            textColor: '#0eede4',
+                                            trailColor: '#d6d6d6',
+                                            backgroundColor: '#0eede4',
+                                          })}
+                                         />;
+                        
+                                    </div>
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
 
                                     <div className="overlay">
