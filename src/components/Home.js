@@ -46,10 +46,10 @@ function Home() {
 
             <MovieCarousel />
             <form>
-                <label>
-                    <input type="radio" value="popular" name="movie-type" checked={movieType === "popular"} onChange={onValueChange} />
-                    <label className="radio-button">Popular</label>
-                </label>
+                <div>
+                    <input id ="popular" type="radio" value="popular" name="movie-type" checked={movieType === "popular"} onChange={onValueChange} />
+                    <label htmlFor='popular' className="radio-button">Popular</label>
+                    </div>
                 <label>
                     <input type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"} onChange={onValueChange} />
                     <label className="radio-button">Top Rated</label>
