@@ -26,6 +26,10 @@
     display: flex;
     position: relative;
     bottom: 225px;
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px; 
 }
 
 .currentmovie__detailleft {
@@ -50,12 +54,24 @@
     text-shadow: 0px 0px 5px #000000;
     margin-bottom: .5rem;
     font-family: $poppins;
+    font-weight: 600;
 }
 .currentmovie__name {
     font-weight: 600;
     font-size: 3rem;
     font-family: $poppins;
 }
+
+.currentmovie__genres{
+    margin : 1.25rem 0;
+}
+.currentmovie__genre{
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: .5rem;
+    margin-right: 1rem;
+}
+
 
 .currentmovie__detailRightBottom {
     margin: 2rem 0;

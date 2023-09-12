@@ -38,9 +38,9 @@ function Individual() {
             </div>
             <div className="currentmovie__detail">
                 <div className="currentmovie__detailleft">
-                    
-                        <img className="currentmovie__poster" src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`} alt="current movie" />
-                   
+
+                    <img className="currentmovie__poster" src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`} alt="current movie" />
+
                 </div>
 
                 <div className="currentmovie__detailRight">
@@ -49,14 +49,27 @@ function Individual() {
                         <div className="currentmovie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
                         <div className="current__rating">
                             {currentMovieDetail ? currentMovieDetail.vote_average : ""}
+
                         </div>
 
                         <div className="currentmovie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
                         <div className="currentmovie__releaseDate">{currentMovieDetail ? "Release date: " + currentMovieDetail.release_date : ""}</div>
+                        <div className="currentmovie__genres">{currentMovieDetail && currentMovieDetail.genres ?
+                            currentMovieDetail.genres.map(genre => (
+                                <>
+                                    <span className="currentmovie__genre" id={genre.id}>
+                                        {genre.name}
+                                    </span>
+                                </>
+                            ))
+                            :
+                            ""
+                        }
+                        </div>
                     </div>
                     <div className="currentmovie__detailRightBottom">
                         <div className="synopsisText">Detail</div>
-                        <div className= "currentmovie__description">{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
+                        <div className="currentmovie__description">{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
                     </div>
 
 
