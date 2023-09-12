@@ -30,7 +30,7 @@ function Home() {
             };
             const response = await fetch(`https://api.themoviedb.org/3/movie/${movieType}?language=en-US&page=1`, options);
             const data = await response.json();
-        
+
 
             setMovieList(data.results);
         };
@@ -43,18 +43,24 @@ function Home() {
 
             <MovieCarousel />
             <form>
-                <label><input type="radio" value="popular" name="movie-type" checked={movieType === "popular"}
-                    onChange={onValueChange} /> Popular</label>
-                <label><input type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"}
-                    onChange={onValueChange} />Top Rated </label>
-                <label><input type="radio" value="now_playing" name="movie-type" checked={movieType === "now_playing"}
-                    onChange={onValueChange} />Now Playing </label>
-                <label> <input type="radio" value="upcoming" name="movie-type" checked={movieType === "upcoming"}
-                    onChange={onValueChange} />Upcoming</label>
-
-
+                <label>
+                    <input type="radio" value="popular" name="movie-type" checked={movieType === "popular"} onChange={onValueChange} />
+                    <label className="radio-button">Popular</label>
+                </label>
+                <label>
+                    <input type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"} onChange={onValueChange} />
+                    <label className="radio-button">Top Rated</label>
+                </label>
+                <label>
+                    <input type="radio" value="now_playing" name="movie-type" checked={movieType === "now_playing"} onChange={onValueChange} />
+                    <label className="radio-button">Now Playing</label>
+                </label>
+                <label>
+                    <input type="radio" value="upcoming" name="movie-type" checked={movieType === "upcoming"} onChange={onValueChange} />
+                    <label className="radio-button">Upcoming</label>
+                </label>
             </form>
-            
+
 
             {twelve === "" ? (
                 <h1>Fetching Movie..</h1>
