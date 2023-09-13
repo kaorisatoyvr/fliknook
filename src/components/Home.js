@@ -44,23 +44,23 @@ function Home() {
             {/* CAROUSEL */}
 
             <MovieCarousel />
-            <form>
-                <div >
+            <form className="form">
+                <div className='button'>
                     <input id="popular" type="radio" value="popular" name="movie-type" checked={movieType === "popular"} onChange={onValueChange} />
                     <label htmlFor='popular' className="radio-button">Popular</label>
                 </div>
-                <label>
+                <div className='button'>
                     <input id="top_rated" type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"} onChange={onValueChange} />
                     <label htmlFor='top_rated' className="radio-button">Top Rated</label>
-                </label>
-                <label>
+                </div>
+                <div className='button'>
                     <input id="now_playing" type="radio" value="now_playing" name="movie-type" checked={movieType === "now_playing"} onChange={onValueChange} />
                     <label htmlFor='now_playing' className="radio-button">Now Playing</label>
-                </label>
-                <label>
+                </div>
+                <div className='button'>
                     <input id="upcoming" type="radio" value="upcoming" name="movie-type" checked={movieType === "upcoming"} onChange={onValueChange} />
                     <label htmlFor='upcoming' className="radio-button">Upcoming</label>
-                </label>
+                </div>
             </form>
 
 
