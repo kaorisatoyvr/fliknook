@@ -14,7 +14,7 @@ function About() {
 
                 <div>
                     <h2>The Power of TMDB Integration</h2>
-                    <p>At the heart of FlikNook is our integration with TMDB, The Movie Database. TMDB is the world's most comprehensive movie database, and it's the backbone of our platform. This partnership allows us to offer you access to an extensive collection of movie information, including details on cast, crew, plot summaries, trailers, and much more. With TMDB's data at our fingertips, we ensure that you have all the information you need to make informed decisions about what to watch next.</p>
+                    <p>"FlikNook's core is our integration with TMDB, the world's most comprehensive movie database. It forms the backbone of our platform, granting you access to a vast array of movie details, from cast and crew to plot summaries, trailers, and more. With TMDB's data, we empower you to make informed decisions about your next watch."</p>
                 </div>
             </div>
         </div>
