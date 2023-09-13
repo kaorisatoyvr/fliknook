@@ -47,6 +47,7 @@ function Home() {
                         {movieList.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
+                                     {/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
                                     <div className="rate"  style={{ width: 60, height: 60 }}>
                                         <CircularProgressbar 
                                         value={Number(movie?.vote_average/ 10)} 
