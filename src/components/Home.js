@@ -13,7 +13,6 @@ function Home() {
     const [movieList, setMovieList] = useState([]);
     const [movieType, setMovieType] = useState("popular");
     const isDesktop = useMediaQuery('(min-width: 1024px)');
-    const value = 0.66;
 
     const onValueChange = (event) => {
         setMovieType(event.target.value);
@@ -84,19 +83,11 @@ function Home() {
                                         backgroundPadding={6}
 
                                         styles={buildStyles({
-                                            backgroundColor: "#0eede4",
-                                            textColor: "#fff",
-                                            pathColor: "#fff",
-                                            trailColor: "transparent",
-                                            // Rotation of path and trail, in number of turns (0-1)
-                                            // rotation: 0.25,
-                                        
                                             // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                                             strokeLinecap: 'butt',
                                         
                                             // Text size
                                             textSize: '28px',
-                                            fontFamily: 'Poppins',
                                             fontWeight: 700,
 
                                             // How long animation takes to go from one percentage to another, in seconds
@@ -108,8 +99,8 @@ function Home() {
                                             // Colors
                                             pathColor: '#000000',
                                             textColor: '#000000',
-                                            trailColor: `rgba(14, 237, 228, ${movie.vote_average / 10})`,
-                                            backgroundColor: '#0eede4',
+                                            trailColor: 'grey',
+                                            backgroundColor: 'rgba(70,203,178,0.8)',
                                           })}
                                          />;
                                     </div>
