@@ -57,3 +57,63 @@
   text-align: left;
   width: 50%;
 }
+
+//mobile
+
+.posterImage__mobile{
+  height: 400px;
+
+  img{
+    margin: auto;
+    display: block;
+    width: 100%;
+    }
+}
+
+
+.posterImage__overlay__mobile {
+  position: absolute;
+  padding: 5rem;
+  bottom: 0px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+  opacity: 1;
+  transition: opacity .3s;
+}   
+
+
+.posterImage__title__mobile {
+  font-family: $poppins;
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+.posterImage__runtime__mobile{
+  font-family: $poppins;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.posterImage__rating__mobile {
+  
+  margin-left: 3rem;
+}
+
+.posterImage__description__mobile {
+  font-family: $poppins;
+  font-style: italic;
+  font-size: 0.5rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  text-align: left;
+  width: 50%;
+}
+
+

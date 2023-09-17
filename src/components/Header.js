@@ -42,25 +42,25 @@ function Header() {
                     <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
                     <p>Mobile</p>
                     {/* https://hamburger-react.netlify.app/ */}
-                    <Hamburger className = "hamburger" toggled={isOpen} toggle={toggleMobileMenu}
-                            size={30}
-                            direction="right"
-                            // duration={0.8}
-                            color= "#0eede4"
-                            easing="ease-in" 
-                            label="Show menu"
+                    <Hamburger className="hamburger" toggled={isOpen} toggle={toggleMobileMenu}
+                        size={30}
+                        direction="right"
+                        // duration={0.8}
+                        color="#0eede4"
+                        easing="ease-in"
+                        label="Show menu"
 
-                            onToggle={toggled => {
-                                if (toggled) {
-                                   // open a menu
-                                } else {
-                                   // close a menu
-                                }
-                              }}
+                        onToggle={toggled => {
+                            if (toggled) {
+                                // open a menu
+                            } else {
+                                // close a menu
+                            }
+                        }}
 
-                        />
-                        {isOpen && (
-                            <nav className="mobile-nav">
+                    />
+                    {isOpen && (
+                        <nav className="mobile-nav">
                             <ul>
                                 <li>
                                     {/* Links */}
@@ -73,10 +73,11 @@ function Header() {
                                     <NavLink to="/favourite">Favourite</NavLink>
                                 </li>
                             </ul>
-                            
+
                         </nav>
-                        )}
-                    
+                    )
+                    }
+
                 </div>}
 
         </header>
