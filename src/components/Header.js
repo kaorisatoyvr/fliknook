@@ -41,7 +41,8 @@ function Header() {
                 : <div className="mobile-header">
                     <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
                     <p>Mobile</p>
-                    <Hamburger toggled={isOpen} toggle={toggleMobileMenu}
+                    {/* https://hamburger-react.netlify.app/ */}
+                    <Hamburger className = "hamburger" toggled={isOpen} toggle={toggleMobileMenu}
                             size={30}
                             direction="right"
                             // duration={0.8}
