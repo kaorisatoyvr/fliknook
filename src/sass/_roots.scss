@@ -1,8 +1,7 @@
 @use "variables" as *;
-
 body {
-    background-color: $black;
-    color: $white;
+    background-color: var(--body_background);
+    color: var(--body_color);
     font-family: $poppins;
 }
 
