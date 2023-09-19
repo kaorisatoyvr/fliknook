@@ -1,36 +1,5 @@
 @use "variables" as *;
 
-//mobile
-
-@media(max-width:730px) {
-    .form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        place-items: center;
-        margin: 0 auto;
-        width:60%;
-
-        .button {
-            margin-left: 0;
-            margin-bottom: 1.5rem;
-        }
-    }
-    }
-
-    @media(max-width:490px) {
-        .form {
-            width:80%;
-    
-            .button {
-                margin-left: 0;
-                margin-bottom: 1.5rem;
-            }
-        }
-    
-    
-    
-        }
-
 
     //  For Desktop
     .movie-list {

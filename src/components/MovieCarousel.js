@@ -1,11 +1,13 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const MovieCarousel = () => {
   const [carousel, setCarousel] = useState([]);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   useEffect(() => {
     // Function to fetch the tasks from the API
     const getMovieList = async () => {
@@ -26,6 +28,7 @@ const MovieCarousel = () => {
     getMovieList();
 }, []);
 let eight = carousel?.slice(0, 8);
+
   return (
     <div className="poster">
       <Carousel
@@ -51,9 +54,17 @@ let eight = carousel?.slice(0, 8);
                     {movie ? movie.vote_average : ""}
                   </span>
                 </div>
-                <div className="posterImage__description">
-                  {movie ? movie.overview : ""}
+                {isDesktop ? (
+                   <div className="posterImage__description">
+                   {movie ? movie.overview : ""}
+                 </div>
+                ) : (
+
+                  <div className="posterImage__description">
                 </div>
+                )
+             }
+               
               </div>
             </div>
           </Link>
