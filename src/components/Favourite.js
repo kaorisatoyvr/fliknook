@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { appTitle } from "../globals/globalVariables";
 import { useSelector, useDispatch } from "react-redux";
-import { addFav, deleteFav } from "../features/favsSlice";
+// import { addFav, deleteFav } from "../features/favsSlice";
+import {deleteFav } from "../features/favsSlice";
 
 
 function Favourite() {
