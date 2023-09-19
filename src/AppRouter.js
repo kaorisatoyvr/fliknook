@@ -9,6 +9,7 @@ import Individual from './components/Individual';
 import Favourite from './components/Favourite';
 import Footer from './components/Footer';
 import Error from './components/Error';
+import DarkMode from './components/DarkMode';
 
 
 
@@ -18,6 +19,7 @@ function AppRouter() {
       <div className="App">
         {/* add Header Components */}
         <Header />
+        <DarkMode />
         <main>
           <Routes>
             <Route path="/" exact element={<Home />} />
