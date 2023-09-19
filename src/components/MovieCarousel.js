@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import useMediaQuery from '../hooks/useMediaQuery';
+
 
 const MovieCarousel = () => {
   const [carousel, setCarousel] = useState([]);
