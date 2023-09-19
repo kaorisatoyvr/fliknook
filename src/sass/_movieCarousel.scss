@@ -2,17 +2,15 @@
 @use 'variables' as *;
 
 .posterImage{
-  height: 600px;
-  position: relative;
+  height: auto;
+  max-height: 600px;
 }
 
-.posterImage{
-  img{
+.posterImage img{
   margin: auto;
   display: block;
   width: 100%;
   }
-}
 
 .posterImage__overlay {
   position: absolute;
@@ -29,13 +27,16 @@
   transition: opacity .3s;
 }   
 
-
 .posterImage__title {
   font-family: $poppins;
   font-weight: 900;
   font-size: 4rem;
   margin-bottom: 0.4rem;
   text-align: left;
+
+  p {
+    margin: 0;
+  }
 }
 
 .posterImage__runtime{
@@ -61,66 +62,41 @@
 
 //mobile
 
-.posterImage__mobile{
-  height: auto;
-  position: relative;
+@media (max-width:730px){
 
-  img{
-   max-width: 100%;
-   height:auto;
-   margin: auto;
-   display: block;
-  
-    }
-}
-
-
-.posterImage__overlay__mobile {
-
-  padding: 5rem;
-  height: auto;
-  position: absolute;
-  bottom: 0px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: flex-start;
-  background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
-  opacity: 1;
-  transition: opacity .3s;
+  .posterImage__runtime{
+    font-family: $poppins;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .posterImage__overlay {
+    padding: 2rem;
+  }   
  
-}   
-
-
-.posterImage__title__mobile {
-  font-size: 3rem;
-  margin-bottom: 0.2rem;
-  font-weight: 900;
+.posterImage__title {
   font-family: $poppins;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 0.4rem;
   text-align: left;
-
+}
 }
 
-.posterImage__runtime__mobile{
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-family: $poppins;
+@media (max-width:400px){
+
+  .posterImage__runtime{
+    font-size: 1rem;
+  }
+  .posterImage__overlay {
+    padding: 1rem;
+  }   
+  .posterImage__title {
+ 
+    font-size: 1.5rem;
+
+  }
 }
 
-.posterImage__rating__mobile {
+
+
   
-  margin-left: 2rem;
-}
-
-.posterImage__description__mobile {
-  font-size: 0.9rem;
-  margin-bottom: 0.2rem;
-  width: 50%;
-  font-family: $poppins;
-  font-style: italic;
-  display: flex;
-  text-align: left;
-}
-
-

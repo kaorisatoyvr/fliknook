@@ -17,6 +17,7 @@
     height: 500px;
     object-fit:cover;
     object-position: 0 35%;
+    filter:brightness(0.7);
 
 
 }
@@ -26,8 +27,8 @@
     display: flex;
     position: relative;
     bottom: 225px;
-    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
-    background-color: rgba(0, 0, 0, 0.5);
+    // background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    // background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px; 
 }

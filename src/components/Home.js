@@ -44,23 +44,23 @@ function Home() {
             {/* CAROUSEL */}
 
             <MovieCarousel />
-            <form>
-                <div>
-                    <input id ="popular" type="radio" value="popular" name="movie-type" checked={movieType === "popular"} onChange={onValueChange} />
+            <form className="form">
+                <div className='button'>
+                    <input id="popular" type="radio" value="popular" name="movie-type" checked={movieType === "popular"} onChange={onValueChange} />
                     <label htmlFor='popular' className="radio-button">Popular</label>
-                    </div>
-                <label>
-                    <input type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"} onChange={onValueChange} />
-                    <label className="radio-button">Top Rated</label>
-                </label>
-                <label>
-                    <input type="radio" value="now_playing" name="movie-type" checked={movieType === "now_playing"} onChange={onValueChange} />
-                    <label className="radio-button">Now Playing</label>
-                </label>
-                <label>
-                    <input type="radio" value="upcoming" name="movie-type" checked={movieType === "upcoming"} onChange={onValueChange} />
-                    <label className="radio-button">Upcoming</label>
-                </label>
+                </div>
+                <div className='button'>
+                    <input id="top_rated" type="radio" value="top_rated" name="movie-type" checked={movieType === "top_rated"} onChange={onValueChange} />
+                    <label htmlFor='top_rated' className="radio-button">Top Rated</label>
+                </div>
+                <div className='button'>
+                    <input id="now_playing" type="radio" value="now_playing" name="movie-type" checked={movieType === "now_playing"} onChange={onValueChange} />
+                    <label htmlFor='now_playing' className="radio-button">Now Playing</label>
+                </div>
+                <div className='button'>
+                    <input id="upcoming" type="radio" value="upcoming" name="movie-type" checked={movieType === "upcoming"} onChange={onValueChange} />
+                    <label htmlFor='upcoming' className="radio-button">Upcoming</label>
+                </div>
             </form>
 
 
@@ -74,6 +74,7 @@ function Home() {
                         {twelve.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
+                                     {/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
                                     <div className="rate"  style={{ width: 60, height: 60 }}>
                                         <CircularProgressbar 
                                         value={Number(movie?.vote_average/ 10)} 
@@ -82,27 +83,27 @@ function Home() {
                                         background
                                         backgroundPadding={6}
 
-                                        styles={buildStyles({
-                                            // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                                            strokeLinecap: 'butt',
-                                        
-                                            // Text size
-                                            textSize: '28px',
-                                            fontWeight: 700,
+                                            styles={buildStyles({
+                                                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                                                strokeLinecap: 'butt',
 
-                                            // How long animation takes to go from one percentage to another, in seconds
-                                            pathTransitionDuration: 0.5,
-                                        
-                                            // Can specify path transition in more detail, or remove it entirely
-                                            // pathTransition: 'none',
-                                        
-                                            // Colors
-                                            pathColor: '#000000',
-                                            textColor: '#000000',
-                                            trailColor: 'grey',
-                                            backgroundColor: 'rgba(70,203,178,0.8)',
-                                          })}
-                                         />;
+                                                // Text size
+                                                textSize: '28px',
+                                                fontWeight: 700,
+
+                                                // How long animation takes to go from one percentage to another, in seconds
+                                                pathTransitionDuration: 0.5,
+
+                                                // Can specify path transition in more detail, or remove it entirely
+                                                // pathTransition: 'none',
+
+                                                // Colors
+                                                pathColor: '#000000',
+                                                textColor: '#000000',
+                                                trailColor: 'grey',
+                                                backgroundColor: 'rgba(70,203,178,0.8)',
+                                            })}
+                                        />;
                                     </div>
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
 

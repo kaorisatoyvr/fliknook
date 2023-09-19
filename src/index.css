@@ -1,3 +1,20 @@
+:root {
+  --body_background: black;
+  --body_color: white;
+  --link_color: #0eede4;
+  
+}
+[data-theme="dark"] {
+  --body_background: mintcream;
+  --body_color: black;
+  --link_color: #0eede4;
+  
+}
+
+* {
+  transition: all 0.15s;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
