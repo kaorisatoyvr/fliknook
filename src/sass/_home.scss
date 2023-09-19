@@ -1,12 +1,24 @@
 @use "variables" as *;
 
 
-    //  For Desktop
-    .movie-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        margin: 20px 50px 10px 50px;
-        gap: 2rem;
+//  For Desktop
+.movie-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 20px 50px 10px 50px;
+    gap: 2rem;
+}
+.img-container {
+    position: relative;
+    width: 100%;
+        height: 100%;
+    // max-width: 243px;
+    // max-height: 364px;
+   
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.2s;   
     }
     .rate {
         position: absolute;
@@ -16,32 +28,30 @@
     }   
     :hover {
         cursor: pointer;
-        
     }
-    .overlay {
-        position: absolute;
-        height: 100%;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.400);
-        background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
-        opacity: 0;
-        transition: .5s ease;
-        padding: 10px;
-        h2 {
-            color: $white;
-            font-size: 22px;
-            margin: .5rem 0 0 0;
-        }
-        p {
-            color: $white;
-            margin-top: 5px;
-        }
-        a {
-            text-align: center;
-        }
-    } 
-
+}
+.overlay {
+    position: absolute;
+    // height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.400);
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    opacity: 0;
+    transition: .5s ease;
+    padding: 10px;
+    h2 {
+        color: $white;
+        font-size: 22px;
+        margin: .5rem 0 0 0;
+    }
+    p {
+        color: $white;
+        margin-top: 5px;
+    }
+    a {
+        text-align: center;
+    }
+} 
 .overview {
     display: -webkit-box;
     font-style: italic;;
@@ -74,36 +84,27 @@
        
     }
 
-    // For Mobile
-    .mobile-movie-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin: 20px 30px 10px 30px;
-        gap: 1rem;
-
-        .mobile-img-container {
-            .mobile-rate {
-                position: absolute;
-                margin: 1rem;
-                color: $main-color;
-                font-weight: 700;
-                font-size: 2rem;
-                z-index: 999;
-            }
-
-            img {
-                position: relative;
-                width: 100%;
-            }
+// For Mobile
+.mobile-movie-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 30px 10px 30px;
+    gap: 1rem;
+    .mobile-img-container {
+        .mobile-rate {
+            position: absolute;
+            margin: 1rem;
+            color: $main-color;
+            font-weight: 700;
+            font-size: 2rem;
+            z-index: 999;
+        }
+        img {
+            position: relative;
+            width: 100%;
         }
     }
-
-    @media (max-width: 1600px) {
-        .movie-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
-    }
+}
 
     @media (max-width: 1300px) {
         .movie-list {
