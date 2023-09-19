@@ -162,3 +162,31 @@
         }
     }
 }
+
+@media (max-width: 1600px) {
+    .movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1300px) {
+    .movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mobile-movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .mobile-movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

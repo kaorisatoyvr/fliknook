@@ -74,13 +74,14 @@ function Home() {
                         {twelve.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
-                                    <div className="rate" style={{ width: 60, height: 60 }}>
-                                        <CircularProgressbar
-                                            value={Number(movie?.vote_average / 10)}
-                                            maxValue={1}
-                                            text={`${movie.vote_average * 10}%`}
-                                            background
-                                            backgroundPadding={6}
+                                     {/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
+                                    <div className="rate"  style={{ width: 60, height: 60 }}>
+                                        <CircularProgressbar 
+                                        value={Number(movie?.vote_average/ 10)} 
+                                        maxValue={1} 
+                                        text={`${movie.vote_average * 10}%`} 
+                                        background
+                                        backgroundPadding={6}
 
                                             styles={buildStyles({
                                                 // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
