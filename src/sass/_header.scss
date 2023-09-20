@@ -64,20 +64,22 @@
 
 
     .mobile-nav{
-        // position: absolute;
-        top: 100%; /* Position below the header */
+        position: absolute;
+        top: 77px; /* Position below the header */
         right: 0;
-       
+       background-color: $main-color;
         box-shadow: 0 2px 4px $main-color;
         z-index: 999;
         justify-content: center;
         align-items: center;
+        padding: 1rem;
         // display: none; /* Initially hide the mobile menu */
         
 
 
         ul{
             list-style: none;
+            padding-left: 0;
             // position: absolute;
             // justify-content: center;
             // align-items: center;

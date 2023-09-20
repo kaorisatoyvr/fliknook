@@ -1,5 +1,5 @@
 @use "variables" as *;
-body {
+body, a, a:visited {
     background-color: var(--body_background);
     color: var(--body_color);
     font-family: $poppins;

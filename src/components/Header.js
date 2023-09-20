@@ -50,13 +50,7 @@ function Header() {
                         easing="ease-in"
                         label="Show menu"
 
-                        onToggle={toggled => {
-                            if (toggled) {
-                                // open a menu
-                            } else {
-                                // close a menu
-                            }
-                        }}
+                        onToggle={toggleMobileMenu}
 
                     />
                     {isOpen && (
