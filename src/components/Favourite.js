@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { appTitle } from "../globals/globalVariables";
 import { useSelector, useDispatch } from "react-redux";
-// import { addFav, deleteFav } from "../features/favsSlice";
-import {deleteFav } from "../features/favsSlice";
+
+import {addFav, deleteFav } from "../features/favs/favsSlice";
 
 
 function Favourite() {
@@ -15,6 +15,10 @@ const favs = useSelector((state) => state.favs);
     document.title = `${appTitle} - Favorite Movies`;
     // dispatch(fetchFavoriteMovies()); // Fetch favorite movies when the component mounts
   }, [dispatch]);
+
+  const addToFavorites = (movie) => {
+    dispatch(addFav(movie));
+  };
 
     return (
         <div>
@@ -41,14 +45,18 @@ const favs = useSelector((state) => state.favs);
                   <button onClick={() => dispatch(deleteFav(movie.id))}>
                     Remove from Favorites
                   </button>
+                  <button onClick={() => addToFavorites(movie.id)}>Add to Favorites</button>
                 </div>
+
               );
+
             })}
           </div>
         )}
+        
+    </div>
 
-        </div>
 
-    )
+    );
 }
 export default Favourite;

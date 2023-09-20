@@ -8,7 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import favoriteIcon from '../images/heart-red.png';
 import favoriteIconwhite from '../images/heart-white.png';
 import FavButton from './FavButton';
-import { addFav, deleteFav } from "../features/favsSlice";
+import { addFav, deleteFav } from "../features/favs/favsSlice";
 import {useDispatch} from "react-redux";
 
 function Home() {
