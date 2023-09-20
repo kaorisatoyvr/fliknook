@@ -42,12 +42,13 @@
     .overlay {
         position: absolute;
         height: 100%;
-        top: 0;
+        bottom: 0;
         background-color: rgba(0, 0, 0, 0.400);
         background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
         opacity: 0;
         transition: .5s ease;
         padding: 10px;
+        z-index: 0;
         h2 {
             font-size: 22px;
             margin: .5rem 0 0 0;
