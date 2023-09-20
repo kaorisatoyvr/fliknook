@@ -94,15 +94,14 @@
 
 // For Mobile
 .mobile-movie-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     margin: 20px 30px 10px 30px;
     gap: 1rem;
     .mobile-img-container {
         position: relative;
         .mobile-rate {
             position: absolute;
-            margin: -1rem;       
+            margin: -1.5rem; 
+            font-weight: 700;      
             right: 0;
             z-index: 999;
         }
@@ -131,8 +130,5 @@
         .mobile-movie-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-        }
-        .mobile-rate {
-
         }
     }
