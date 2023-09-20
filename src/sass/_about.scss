@@ -1,6 +1,6 @@
 @use "variables" as *;
 .about {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     img {
         width: 200px;
@@ -24,4 +24,22 @@
 
 .tmdb img {
     padding: 7rem 6rem 7rem 3rem;
+}
+
+@media (max-width: 1024px) {
+.about {
+        width: 80%;
+        display: block;
+        text-align: center;
+        img {
+            width: 100px;
+            padding: 1rem;
+        }
+        p {
+            width: 100%;
+        }
+} 
+.about-wrap {
+    display: block;
+}
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
 import MovieCarousel from './MovieCarousel';
+import Rate from './Rate';
 import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -74,37 +75,7 @@ function Home() {
                         {twelve.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
-                                     {/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
-                                    <div className="rate"  style={{ width: 60, height: 60 }}>
-                                        <CircularProgressbar 
-                                        value={Number(movie?.vote_average/ 10)} 
-                                        maxValue={1} 
-                                        text={`${movie.vote_average * 10}%`} 
-                                        background
-                                        backgroundPadding={6}
-
-                                            styles={buildStyles({
-                                                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                                                strokeLinecap: 'butt',
-
-                                                // Text size
-                                                textSize: '28px',
-                                                fontWeight: 700,
-
-                                                // How long animation takes to go from one percentage to another, in seconds
-                                                pathTransitionDuration: 0.5,
-
-                                                // Can specify path transition in more detail, or remove it entirely
-                                                // pathTransition: 'none',
-
-                                                // Colors
-                                                pathColor: '#000000',
-                                                textColor: '#000000',
-                                                trailColor: 'grey',
-                                                backgroundColor: 'rgba(70,203,178,0.8)',
-                                            })}
-                                        />;
-                                    </div>
+                                <Rate movie={movie} />
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
 
                                     <div className="overlay">
@@ -124,7 +95,7 @@ function Home() {
                         {twelve.map((movie) => (
                             <article className="movie-article" key={movie.id}>
                                 <div className="mobile-img-container">
-                                    <p className="mobile-rate">{movie.vote_average}</p>
+                                    <Rate movie={movie} />
                                     <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
                                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                                     </Link>

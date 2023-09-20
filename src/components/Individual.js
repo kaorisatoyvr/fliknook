@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Rate from './Rate';
 
 function Individual() {
     const [currentMovieDetail, setMovieDetail] = useState({ backdrop_path: "" });
@@ -48,7 +49,7 @@ function Individual() {
                         <div className="currentmovie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
                         <div className="currentmovie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
                         <div className="current__rating">
-                            {currentMovieDetail ? currentMovieDetail.vote_average : ""}
+                        <Rate movie={currentMovieDetail} />
 
                         </div>
 
