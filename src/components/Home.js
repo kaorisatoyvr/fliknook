@@ -95,7 +95,7 @@ function Home() {
                         {twelve.map((movie) => (
                             <article className="movie-article" key={movie.id}>
                                 <div className="mobile-img-container">
-                                    <p className="mobile-rate">{movie.vote_average}</p>
+                                    <Rate movie={movie} />
                                     <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
                                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                                     </Link>

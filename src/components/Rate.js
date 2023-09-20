@@ -7,7 +7,7 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 function Rate({ movie }) {
     return(
     
-    <div className="rate"  style={{ width: 60, height: 60 }}>
+    <div className="rate mobile-rate"  style={{ width: 60, height: 60 }}>
         {movie ? (
         <CircularProgressbar 
             value={Number(movie.vote_average/ 10)} 
