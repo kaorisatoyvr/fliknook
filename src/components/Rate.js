@@ -3,7 +3,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 {/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
-
+// test
 function Rate({ movie }) {
     return(
     
@@ -12,7 +12,7 @@ function Rate({ movie }) {
         <CircularProgressbar 
             value={Number(movie.vote_average/ 10)} 
             maxValue={1} 
-            text={`${movie.vote_average * 10}%`} 
+            text={`${(movie.vote_average * 10).toFixed(0)}%`} 
             background
             backgroundPadding={6}
 
