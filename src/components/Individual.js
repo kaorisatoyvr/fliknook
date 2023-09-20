@@ -72,27 +72,8 @@ function Individual() {
                         <div className="synopsisText">Detail</div>
                         <div className="currentmovie__description">{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
                     </div>
-
-
-
-
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
         </div>
     )
 }

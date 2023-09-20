@@ -22,7 +22,6 @@ function Header() {
             {isDesktop ?
                 <div className="desktop-header">
                     <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
-                    <p>Desktop</p>
                     <nav className="desktop-nav">
                         <ul>
                             <li>
@@ -40,7 +39,6 @@ function Header() {
                 </div>
                 : <div className="mobile-header">
                     <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
-                    <p>Mobile</p>
                     {/* https://hamburger-react.netlify.app/ */}
                     <Hamburger className="hamburger" toggled={isOpen} toggle={toggleMobileMenu}
                         size={30}
@@ -58,7 +56,7 @@ function Header() {
                             <ul>
                                 <li>
                                     {/* Links */}
-                                    <NavLink to="/">Home</NavLink>
+                                    <NavLink activeClassName="active" to="/">Home</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/about">About</NavLink>
