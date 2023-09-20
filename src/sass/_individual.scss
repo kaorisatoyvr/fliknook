@@ -10,7 +10,8 @@
 }
 
 .currentmovie__intro{
-    width:80%;
+    //changed to 100%
+    width:100%
 }
 .currentmovie__backdrop {
     width: 100%;
@@ -23,7 +24,10 @@
 }
 .currentmovie__detail{
     align-self: center;
-    width: 75%;
+    // width: 100%;
+    // flex-direction: column;
+    // width: 75%;
+    margin: auto 3rem;
     display: flex;
     position: relative;
     bottom: 225px;
@@ -38,6 +42,7 @@
 }
 
 .currentmovie__poster {
+    
     width:300px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
@@ -65,12 +70,15 @@
 
 .currentmovie__genres{
     margin : 1.25rem 0;
+    display: flex; // Display genres horizontally
+    flex-wrap: wrap;
 }
 .currentmovie__genre{
     border: 2px solid white;
     border-radius: 20px;
     padding: .5rem;
-    margin-right: 1rem;
+    margin: 0.5rem;
+    // margin-right: 1rem;
 }
 
 
@@ -94,4 +102,13 @@
 }
 .currentmovie__description{
    font-family: $poppins;
+}
+
+//media queries 
+
+@media (max-width: 930px){
+    .currentmovie__name {
+        font-size: 2.5rem;
+    }
+   
 }
