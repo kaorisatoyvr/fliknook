@@ -5,20 +5,16 @@ import MovieCarousel from './MovieCarousel';
 import { Link } from 'react-router-dom';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import favoriteIcon from '../images/heart-red.png';
-import favoriteIconwhite from '../images/heart-white.png';
 import FavButton from './FavButton';
-import { addFav, deleteFav } from "../features/favs/favsSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Home() {
-
 
     // Create a state variable to hold the tasks
     const [movieList, setMovieList] = useState([]);
     const [movieType, setMovieType] = useState("popular");
     const isDesktop = useMediaQuery('(min-width: 1024px)');
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const onValueChange = (event) => {
         setMovieType(event.target.value);
@@ -26,17 +22,6 @@ function Home() {
 
     const favs = useSelector((state) => state.favs);
     console.log(favs)
-    
-
-    function handleFavClick(addToFav, obj) {
-        if (addToFav === true) {
-            console.log(obj);
-            dispatch(addFav(obj));
-        } else {
-            dispatch(deleteFav(obj));
-        }
-    }
-
 
     // Call the fetchTasks function when the component is first rendered
     useEffect(() => {
@@ -52,7 +37,6 @@ function Home() {
             };
             const response = await fetch(`https://api.themoviedb.org/3/movie/${movieType}?language=en-US&page=1`, options);
             const data = await response.json();
-
 
             setMovieList(data.results);
         };
@@ -95,21 +79,7 @@ function Home() {
                             <article key={movie.id}>
                                 <div className="img-container">
                                     <div className="favorite-icon">
-                                       
-                                            <FavButton
-                                                characterObj={movie}
-                        
-                                            />
-                                        {movie.isFavorite ? (
-
-                                            <img src={favoriteIcon} alt="Favorite" />
-
-
-                                        ) : (
-
-                                            <img src={favoriteIconwhite} alt="Favorite" />
-                                        )}
-
+                                        <FavButton characterObj={movie} />
                                     </div>
 
                                     {/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
@@ -124,17 +94,11 @@ function Home() {
                                             styles={buildStyles({
                                                 // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                                                 strokeLinecap: 'butt',
-
                                                 // Text size
                                                 textSize: '28px',
                                                 fontWeight: 700,
-
                                                 // How long animation takes to go from one percentage to another, in seconds
                                                 pathTransitionDuration: 0.5,
-
-                                                // Can specify path transition in more detail, or remove it entirely
-                                                // pathTransition: 'none',
-
                                                 // Colors
                                                 pathColor: '#000000',
                                                 textColor: '#000000',
@@ -144,13 +108,6 @@ function Home() {
                                         />;
                                     </div>
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-
-                                    {/* <div className="overlay">
-                                            <h2 className="card-title">{movie.title}</h2>
-                                            <p>{movie.release_date}</p>
-                                            <p className="overview">{movie.overview}</p>
-                                            <Link className="more-info" style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}><p>More Info</p></Link>
-                                        </div> */}
                                 </div>
                             </article>
                         ))}

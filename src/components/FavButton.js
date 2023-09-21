@@ -1,6 +1,8 @@
 // Fav Button
 import { useSelector, useDispatch } from "react-redux";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
+import favoriteIcon from '../images/heart-red.png';
+import favoriteIconwhite from '../images/heart-white.png';
 
 function FavButton({ characterObj }) {
  
@@ -15,20 +17,18 @@ function FavButton({ characterObj }) {
     } else if (func === 'add') {
       dispatch(addFav(characterObj))
     }
-
-  
   }
 
-  function handleRemoveFav() {
-    handleFavClick(false, characterObj);
-  }
+  // function handleRemoveFav() {
+  //   handleFavClick(false, characterObj);
+  // }
 
   return (
     <>
       {(favs.findIndex(arrItem => arrItem.id === characterObj.id) > -1 ) ?  (
-        <button onClick={(e) => handleFavClick(e, 'remove')}>Remove From Favourites</button>
+        <button className="heart-button" onClick={(e) => handleFavClick(e, 'remove')}><img src={favoriteIcon} alt="Favorite" /></button>
         ) : (
-          <button className="addtoFav" onClick={(e) => handleFavClick(e, 'add')}>Add To Favourites</button>
+          <button className="heart-button" onClick={(e) => handleFavClick(e, 'add')}><img src={favoriteIconwhite} alt="Favorite" /></button>
       )}
     </>
   );
