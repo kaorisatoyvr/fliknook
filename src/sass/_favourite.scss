@@ -1,3 +1,4 @@
+@use 'variables' as *;
 .heart-button {
     background-color: transparent;
     border: none;
@@ -15,11 +16,12 @@
     font-size: 1.5rem;
    }
    a {
+    color: hotpink;
     font-weight: 700;
+    &:hover {
+     color: $main-color;
+    }
    }
-//    a:visited {
-
-//    }
 }
 
 .movies-grid {
