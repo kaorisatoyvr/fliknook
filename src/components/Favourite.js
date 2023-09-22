@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { appTitle } from "../globals/globalVariables";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteFav } from "../features/favs/favsSlice";
+import Rate from './Rate';
 import favoriteIcon from '../images/heart-red.png';
 
 function Favourite() {
@@ -28,9 +29,12 @@ function Favourite() {
           {favs?.map((movie, i) => {
             return (
               <div key={i} className="movie-card">
-                <button className="heart-button" onClick={() => dispatch(deleteFav(movie))}>
-                <img src={favoriteIcon} alt="Favorite" />
-                </button>
+                <div className="favorite-icon">
+                  <button className="heart-button" onClick={() => dispatch(deleteFav(movie))}>
+                  <img src={favoriteIcon} alt="Favorite" />
+                  </button>
+                </div>
+                <Rate movie={movie} />
                 <img className="favourite-movie"
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                   alt={movie.title}
