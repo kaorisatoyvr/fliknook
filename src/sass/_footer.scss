@@ -1,5 +1,7 @@
 img {
     width: 3.5rem;
+    width: 3.5rem;
+    margin-top: 1rem;
 }
 
 .footer {
@@ -9,8 +11,11 @@ img {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    align-items: center;
+
     p {
         margin: 0 0 0 1rem;
         text-align: center;
     }
+
 }

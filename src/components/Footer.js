@@ -8,8 +8,8 @@ function Footer() {
     <div className="footer">
     <a href="/"><img src={logo} alt="logo of FlikNook" /></a>
         <div>
-            <p>&copy; 2023 FlikNook</p>
-            <p>Created by Khushi & Kaori</p>
+            {/* <p>&copy; Khushi & Kaori 2023</p> */}
+            <p>Hand coded with <span className='footer-heart'>💜</span>  | &copy; Khushi & Kaori 2023</p>
         </div>
     </div>
     </>
