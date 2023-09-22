@@ -97,13 +97,15 @@ function Home() {
                         {twelve.map((movie) => (
                             <article className="movie-article" key={movie.id}>
                                 <div className="mobile-img-container">
+                                    <div className="favorite-icon">
+                                        <FavButton characterObj={movie} />
+                                    </div>
                                     <Rate movie={movie} />
                                     <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
                                         <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                                     </Link>
                                 </div>
                                 <h2>{movie.title}</h2>
-                                <p>mobile</p>
                                 <p>{movie.release_date}</p>
                             </article>
                         ))}
