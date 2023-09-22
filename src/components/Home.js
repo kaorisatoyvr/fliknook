@@ -4,20 +4,23 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import MovieCarousel from './MovieCarousel';
 import Rate from './Rate';
 import { Link } from 'react-router-dom';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import FavButton from './FavButton';
+import { useSelector } from "react-redux";
 
 function Home() {
-
 
     // Create a state variable to hold the tasks
     const [movieList, setMovieList] = useState([]);
     const [movieType, setMovieType] = useState("popular");
     const isDesktop = useMediaQuery('(min-width: 1024px)');
+    // const dispatch = useDispatch();
 
     const onValueChange = (event) => {
         setMovieType(event.target.value);
     }
+
+    const favs = useSelector((state) => state.favs);
+    console.log(favs)
 
     // Call the fetchTasks function when the component is first rendered
     useEffect(() => {
@@ -34,7 +37,6 @@ function Home() {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${movieType}?language=en-US&page=1`, options);
             const data = await response.json();
 
-
             setMovieList(data.results);
         };
         getMovieList();
@@ -43,7 +45,6 @@ function Home() {
     return (
         <>
             {/* CAROUSEL */}
-
             <MovieCarousel />
             <form className="form">
                 <div className='button'>
@@ -64,7 +65,6 @@ function Home() {
                 </div>
             </form>
 
-
             {twelve === "" ? (
                 <h1>Fetching Movie..</h1>
             ) :
@@ -75,9 +75,11 @@ function Home() {
                         {twelve.map((movie) => (
                             <article key={movie.id}>
                                 <div className="img-container">
-                                <Rate movie={movie} />
+                                    <div className="favorite-icon">
+                                        <FavButton characterObj={movie} />
+                                    </div>
+                                    <Rate movie={movie} />
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-
                                     <div className="overlay">
                                         <h2 className="card-title">{movie.title}</h2>
                                         <p>{movie.release_date}</p>

@@ -9,16 +9,11 @@ import { useState } from 'react';
 function Header() {
     const [isOpen, setOpen] = useState(false);
     const isDesktop = useMediaQuery('(min-width: 1024px)');
-
     const toggleMobileMenu = () => {
         setOpen(!isOpen);
     }
-
-
     return (
-
         <header>
-
             {isDesktop ?
                 <div className="desktop-header">
                     <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
@@ -56,7 +51,7 @@ function Header() {
                             <ul>
                                 <li>
                                     {/* Links */}
-                                    <NavLink activeClassName="active" to="/">Home</NavLink>
+                                    <NavLink to="/">Home</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/about">About</NavLink>
@@ -65,15 +60,11 @@ function Header() {
                                     <NavLink to="/favourite">Favourite</NavLink>
                                 </li>
                             </ul>
-
                         </nav>
                     )
                     }
-
                 </div>}
-
         </header>
     )
-
 }
 export default Header;

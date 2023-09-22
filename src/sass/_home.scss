@@ -11,10 +11,7 @@
 .img-container {
     position: relative;
     width: 100%;
-        height: 100%;
-    // max-width: 243px;
-    // max-height: 364px;
-   
+    height: 100%;
     img {
         width: 100%;
         height: 100%;
@@ -30,6 +27,7 @@
     :hover {
         cursor: pointer;
     }
+    
 }
 .overlay {
     position: absolute;
@@ -43,6 +41,7 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.400);
     background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    border-radius: 10px;
     opacity: 0;
     transition: .5s ease;
     padding: 1rem;
@@ -82,15 +81,19 @@
         position: relative;
         max-width: 280px;
         max-height: 435px;
-
         img {
             width: 100%;
             height: 100%;
             transition: transform 0.2s;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
         }
-
-       
     }
+
+// favourite buttons
+.favorite-icon button{
+    z-index: 2000;
+}
 
 // For Mobile
 .mobile-movie-list {
