@@ -31,7 +31,7 @@ function Favourite() {
                 <button className="heart-button" onClick={() => dispatch(deleteFav(movie))}>
                 <img src={favoriteIcon} alt="Favorite" />
                 </button>
-                <img
+                <img className="favourite-movie"
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                   alt={movie.title}
                 />

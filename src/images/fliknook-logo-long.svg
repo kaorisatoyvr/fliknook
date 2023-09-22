@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.6.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1200 300" style="enable-background:new 0 0 1200 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#56C1AE;stroke-width:20;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{fill:#56C1AE;}
+	.st2{fill:#56C1AE;stroke:#56C1AE;stroke-miterlimit:10;}
+	.st3{font-family:'Poppins-ExtraBold';}
+	.st4{font-size:202.7643px;}
+</style>
+<path class="st0" d="M141.23,263.81c-1.9,0.09-3.81,0.14-5.73,0.14c-62.41,0-113-50.59-113-113s50.59-113,113-113s113,50.59,113,113
+	c0,26.97-9.45,51.74-25.22,71.17"/>
+<circle class="st1" cx="86.61" cy="108.77" r="21.28"/>
+<circle class="st2" cx="178.01" cy="107.08" r="21.28"/>
+<circle class="st1" cx="88.61" cy="196.14" r="21.28"/>
+<circle class="st1" cx="179.76" cy="196.14" r="21.28"/>
+<circle class="st1" cx="135.95" cy="151.26" r="9.46"/>
+<line class="st0" x1="135.5" y1="263.96" x2="657" y2="263.93"/>
+<text transform="matrix(1 0 0 1 276.3765 217.2617)" class="st1 st3 st4">FlikNook</text>
+</svg>
