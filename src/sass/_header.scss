@@ -43,9 +43,7 @@
 
 
 
-.active {
-    color: red;
-}
+
 
 //mobile
 
@@ -67,7 +65,7 @@
         position: absolute;
         top: 77px; /* Position below the header */
         right: 0;
-       background-color: $main-color;
+        background-color: $main-color;
         box-shadow: 0 2px 4px $main-color;
         z-index: 999;
         justify-content: center;
