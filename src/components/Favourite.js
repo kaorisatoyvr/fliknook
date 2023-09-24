@@ -45,14 +45,14 @@ function Favourite() {
                       {/* Conditionally render movie overview on desktop */}
                       {isDesktop ? (
                       <div className="overlay">
-                        <h3>{movie.title}</h3>
+                        <h2>{movie.title}</h2>
                         <p>{movie.release_date}</p>
                         <p className="overview">{movie.overview}</p>
                         <Link className="more-info" style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}><p>More Info</p></Link>
                       </div>
                       ) : (
                       <>
-                        <h3>{movie.title}</h3>
+                        <h2>{movie.title}</h2>
                         <p>{movie.release_date}</p>
                         </>
                       )}

@@ -41,9 +41,9 @@
     background-color: rgba(0, 0, 0, 0.400);
     background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
     border-radius: 10px;
-    opacity: 1;
+    opacity: 0;
     transition: .5s ease;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     h2 {
         color: $white;
         font-size: 22px;
