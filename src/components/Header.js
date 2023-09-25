@@ -14,6 +14,10 @@ function Header() {
         setOpen(!isOpen);
     }
 
+    const closeMobileMenu = () => {
+        setOpen(false);
+    }
+
 
     return (
 
@@ -56,13 +60,13 @@ function Header() {
                             <ul>
                                 <li>
                                     {/* Links */}
-                                    <NavLink activeClassName="active" to="/">Home</NavLink>
+                                    <NavLink activeClassName="active" to="/" onClick={closeMobileMenu} >Home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/about">About</NavLink>
+                                    <NavLink to="/about" onClick={closeMobileMenu} >About</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/favourite">Favourite</NavLink>
+                                    <NavLink to="/favourite" onClick={closeMobileMenu} >Favourite</NavLink>
                                 </li>
                             </ul>
 

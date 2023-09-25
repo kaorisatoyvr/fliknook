@@ -58,10 +58,11 @@
 
 .hamburger {
     display: block;
-
-
 }
 
+.hamburger-react{
+    margin-right:2rem;
+}
 .mobile-nav {
     position: absolute;
     top: 77px;
@@ -92,6 +93,7 @@
 
     li {
         font-weight: 600;
+        margin: 20px 0;
 
         a {
             text-decoration: none;
