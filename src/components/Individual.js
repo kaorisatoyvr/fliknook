@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Rate from './Rate';
+import FavButton from './FavButton';
+// import { useSelector } from "react-redux";
 
 function Individual() {
     const [currentMovieDetail, setMovieDetail] = useState({ backdrop_path: "" });
@@ -48,9 +50,13 @@ function Individual() {
                     <div className="currentmovie__detailRightTop">
                         <div className="currentmovie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
                         <div className="currentmovie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
-                        <div className="current__rating">
-                        <Rate movie={currentMovieDetail} />
-
+                        <div className="rate-favourite">
+                            <div className="current__rating">
+                                <Rate movie={currentMovieDetail} />
+                            </div>
+                            <div className="favorite-icon">
+                                <FavButton characterObj={currentMovieDetail} />
+                            </div>
                         </div>
 
                         <div className="currentmovie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
