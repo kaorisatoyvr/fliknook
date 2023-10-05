@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import useMediaQuery from '../hooks/useMediaQuery';
 import { appTitle } from "../globals/globalVariables";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteFav } from "../features/favs/favsSlice";
@@ -9,6 +10,8 @@ import favoriteIcon from '../images/heart-red.png';
 function Favourite() {
   const favs = useSelector((state) => state.favs.items);
   const dispatch = useDispatch();
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
 
   useEffect(() => {
     document.title = `${appTitle} - Favorite Movies`;
@@ -25,30 +28,41 @@ function Favourite() {
           add some favorite movies.
         </p>
       ) : (
-        <div className="movies-grid">
-          {favs?.map((movie, i) => {
-            return (
-              <div key={i} className="movie-card">
-                <div className="favorite-icon">
-                  <button className="heart-button" onClick={() => dispatch(deleteFav(movie))}>
-                  <img src={favoriteIcon} alt="Favorite" />
-                  </button>
-                </div>
-                <Rate movie={movie} />
-                <img className="favourite-movie"
-                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                  alt={movie.title}
-                />
-                <h3>{movie.title}</h3>
-                <p>{movie.release_date}</p>
-                {/* <p>{movie.overview}</p> */}
-                {/* Add more movie details as needed */}
-                {/* <button onClick={() => addToFavorites(movie)}>Add to Favorites</button> */}
-              </div>
+        <section className="movie-list favourite-grid">
+            {favs?.map((movie, i) => {
+              return (
+                <article key={i} className="img-container">
+                  <div className="favorite-icon">
+                    <div className="mobile-img-container">
+                      <button className="heart-button" onClick={() => dispatch(deleteFav(movie))}>
+                      <img src={favoriteIcon} alt="Favorite" />
+                      </button>
+                    </div>
+                    <Rate movie={movie} />
+                      <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>
+                        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                      </Link>
+                      {/* Conditionally render movie overview on desktop */}
+                      {isDesktop ? (
+                      <div className="overlay">
+                        <h2>{movie.title}</h2>
+                        <p>{movie.release_date}</p>
+                        <p className="overview">{movie.overview}</p>
+                        <Link className="more-info" style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}><p>More Info</p></Link>
+                      </div>
+                      ) : (
+                      <>
+                        <h2>{movie.title}</h2>
+                        <p>{movie.release_date}</p>
+                        </>
+                      )}
+                  </div>
+                </article>
             );
-
-          })}
-        </div>
+            
+            })}
+        </section>  
+        
       )}
     </div>
   );
