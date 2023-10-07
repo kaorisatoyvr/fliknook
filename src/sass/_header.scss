@@ -1,8 +1,11 @@
 @use "variables" as *;
+header {
+    height: 16vh;
+}
 
 .header-logo {
-    width: 5rem;
-    margin: .5rem 0 0 2rem;
+    width: 15rem;
+    margin: 1rem 0 0 7rem;
 }
 
 .desktop-header {
@@ -41,11 +44,11 @@
     }
 }
 
-
-
-
-
 //mobile
+.header-logo-mobile {
+    width: 5rem;
+    margin-top: .5rem;
+}
 
 .mobile-header {
     display: flex;
@@ -63,19 +66,17 @@
 }
 .mobile-nav {
     position: absolute;
-    top: 77px;
+    top: 83px;
     /* Position below the header */
     right: 0;
     width: 100%;
-    background-color: #46cbb376;
+    background-color: rgba(0, 0, 0, 0.71);
     box-shadow: 0 2px 4px hotpink;
-    z-index: 999;
+    z-index: 99999;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     // display: none; /* Initially hide the mobile menu */
-
-
 
     ul {
         list-style: none;
@@ -84,9 +85,6 @@
         // position: absolute;
         // justify-content: center;
         // align-items: center;
-
-
-
     }
 
     li {
@@ -100,13 +98,9 @@
             text-decoration: none;
             background-color: transparent;
             flex-direction: column;
-           
-
             &:hover {
                 color: $white;
             }
-
-
         }
     }
 }

@@ -1,7 +1,7 @@
 .dark_mode {
-    margin-top: -90px;
-    margin-left: 130px;
-    padding-bottom: 1.25rem;
+    margin-top: -109px;
+    margin-left: 20px;
+    padding-bottom: 20px;
 }
 
 .dark_mode_label {
@@ -40,7 +40,7 @@
 .dark_mode_input:checked + .dark_mode_label:after {
     left: 62px;
     transform: translateX(-100%);
-    background: linear-gradient(180deg, #fbd19f, #ee9829);
+    background: linear-gradient(180deg, rgb(247, 205, 226), hotpink);
 }
 .dark_mode_label:active:after {
     width: 30px;
@@ -54,7 +54,8 @@
 }
 .dark_mode_label svg.sun {
     left: 40px;
-    fill: rgb(255, 94, 0);
+    fill: hotpink;
+    // fill: rgb(255, 94, 0);
     transition: 0.3s;
 }
 .dark_mode_label svg.moon {

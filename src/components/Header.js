@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo2 from '../images/fliknook-logo-long.svg';
 import logo from '../images/fliknook.svg';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Hamburger from 'hamburger-react';
@@ -25,7 +26,7 @@ function Header() {
 
             {isDesktop ?
                 <div className="desktop-header">
-                    <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
+                    <a href="/"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></a>
                     <nav className="desktop-nav">
                         <ul>
                             <li>
@@ -42,7 +43,7 @@ function Header() {
                     </nav>
                 </div>
                 : <div className="mobile-header">
-                    <a href="/"><img className="header-logo" src={logo} alt="logo of FlikNook" /></a>
+                    <a href="/"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></a>
                     {/* https://hamburger-react.netlify.app/ */}
                     <Hamburger className="hamburger" toggled={isOpen} toggle={toggleMobileMenu}
                         size={30}
