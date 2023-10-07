@@ -23,10 +23,11 @@ function Header() {
     return (
 
         <header>
-
             {isDesktop ?
                 <div className="desktop-header">
-                    <a href="/"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></a>
+                    <h1 className="header__title">
+                        <a href="/"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></a>
+                    </h1>
                     <nav className="desktop-nav">
                         <ul>
                             <li>
@@ -43,13 +44,15 @@ function Header() {
                     </nav>
                 </div>
                 : <div className="mobile-header">
-                    <a href="/"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></a>
+                    <h1 className="mobile__header__title">
+                        <a href="/"><img className="header-logo-mobile" src={logo2} alt="logo of FlikNook" /></a>
+                    </h1>
                     {/* https://hamburger-react.netlify.app/ */}
                     <Hamburger className="hamburger" toggled={isOpen} toggle={toggleMobileMenu}
                         size={30}
                         direction="right"
                         // duration={0.8}
-                        color="#0eede4"
+                        color="#46CBB2"
                         easing="ease-in"
                         label="Show menu"
 

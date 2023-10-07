@@ -47,9 +47,18 @@
     }
 }
 
+@media (max-width: 1200px){
+    .more-info p {
+        font-size: 1rem!important;
+    }
+}
+
 @media (max-width: 900px) {
     .favourite-wrap {
         width: 90%;
+        h2 {
+            font-size: 1.75rem;
+        }
     }
     .favourite-grid {
         display: grid;
@@ -75,10 +84,10 @@
             box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
         }
     }
-}
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .favourite-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;

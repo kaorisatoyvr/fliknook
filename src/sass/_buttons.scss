@@ -1,40 +1,35 @@
 @use "variables" as *;
 
-.form {
-    
+.form {   
     margin: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
     .button {
         margin-left: 50px;
         display: inline-block;
         width: 100px;
         height: 40px;
         position: relative;
-
+        background-color: rgba(128, 128, 128, 0.222);
+        border-radius: 4px;
         input,
         label {
-
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
         }
-
         input[type="radio"] {
             opacity: 0.011;
             z-index: 100;
         }
-
         input[type="radio"]:checked+label {
             background-color: $main-color;
             color: $black;
             border-radius: 4px;
         }
-
         label {
             cursor: pointer;
             z-index: 90;
@@ -43,10 +38,7 @@
             justify-content: center;
             align-items: center;
             font-weight: 600;
-
-
         }
-
     }
 }
 
@@ -54,30 +46,24 @@
 
 @media(max-width:730px) {
     .form {
- 
         display: grid;
         grid-template-columns: 1fr 1fr;
         place-items: center;
         margin: 1.5rem auto 0;
         width:60%;
-
         .button {
             margin-left: 0;
             margin-bottom: 1.5rem;
         }
     }
-    }
+}
 
     @media(max-width:490px) {
         .form {
             width:80%;
-    
             .button {
                 margin-left: 0;
                 margin-bottom: 1.5rem;
             }
         }
-    
-    
-    
-        }
+}

@@ -143,7 +143,7 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
         .CircularProgressbar {
-            width: 90%;
+            width: 90%!important;
         }
     }
 
@@ -157,6 +157,6 @@
         //     width: 40px;
         // }
         .CircularProgressbar {
-            width: 80%;
+            width: 80%!important;
         }
     }

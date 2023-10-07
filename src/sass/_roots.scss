@@ -5,6 +5,10 @@ body, a, a:visited {
     font-family: $poppins;
 }
 
+main {
+    margin-top: 83px;
+}
+
 a:hover {
     color: $main-color;
 }

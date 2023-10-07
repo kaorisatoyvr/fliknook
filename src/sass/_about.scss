@@ -8,7 +8,7 @@
         padding: 4rem;
     }
     h1, h2 {
-        font-size: 2.5rem;;
+        font-size: 2rem;;
     }
     p {
         width: 80%;
@@ -31,6 +31,9 @@
         width: 80%;
         display: block;
         text-align: center;
+        h1, h2 {
+            font-size: 1.75rem;
+        }
         img {
             width: 100px;
             padding: 1rem;
@@ -42,4 +45,15 @@
 .about-wrap {
     display: block;
 }
+}
+
+@media (max-width: 500px) {
+    .about {
+            h1, h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: .75rem;
+            }
+    } 
 }

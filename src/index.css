@@ -1,14 +1,16 @@
 :root {
   --body_background: black;
   --body_color: white;
-  --link_color: #0eede4;
-  
+  --link_color: #46CBB2;
+  --header_background: rgba(0, 0, 0, 0.8);
+  --mobilenav_background: rgba(0, 0, 0, 0.7);
 }
 [data-theme="dark"] {
   --body_background: mintcream;
   --body_color: black;
-  --link_color: #0eede4;
-  
+  --link_color: #46CBB2;
+  --header_background: rgba(245, 255, 250, 0.9);
+  --mobilenav_background: #1e8774c4;
 }
 
 * {

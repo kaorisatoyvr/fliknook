@@ -52,7 +52,7 @@ let eight = carousel?.slice(0, 8);
                 <div className="posterImage__runtime">
                   {movie ? movie.release_date : ""}
                   <span className="posterImage__rating">
-                    {movie ? movie.vote_average : ""}
+                    {movie ? `${Math.floor(movie.vote_average * 10)}%` : ""}
                   </span>
                 </div>
                 {isDesktop ? (
