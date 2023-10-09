@@ -36,48 +36,50 @@ function Individual() {
 
     return (
         <div className="current__movie">
-            <div className="currentmovie__intro">
+            <div>
                 <img className="currentmovie__backdrop" src={`https://image.tmdb.org/t/p/original${currentMovieDetail.backdrop_path}`} alt="current movie" />
             </div>
             <div className="currentmovie__detail">
+                {/* movie image */}
                 <div className="currentmovie__detailleft">
-
-                    <img className="currentmovie__poster" src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`} alt="current movie" />
-
+                    <img src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`} alt="current movie" />
                 </div>
-
+                {/* movie details text */}
                 <div className="currentmovie__detailRight">
-                    <div className="currentmovie__detailRightTop">
-                        <div className="currentmovie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
-                        <div className="currentmovie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
+                        <h2>
+                            {currentMovieDetail ? currentMovieDetail.original_title : ""}
+                        </h2>
+                        <p>
+                            {currentMovieDetail ? currentMovieDetail.tagline : ""}</p>
                         <div className="rate-favourite">
-                            <div className="current__rating">
+                            {/* <div className="current__rating"> */}
                                 <Rate movie={currentMovieDetail} />
-                            </div>
-                            <div className="favorite-icon">
+                            {/* </div> */}
+                            <div>
+                                {/* individual__heart__button */}
                                 <FavButton characterObj={currentMovieDetail} />
                             </div>
                         </div>
-
-                        <div className="currentmovie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
-                        <div className="currentmovie__releaseDate">{currentMovieDetail ? "Release date: " + currentMovieDetail.release_date : ""}</div>
-                        <div className="currentmovie__genres">{currentMovieDetail && currentMovieDetail.genres ?
+                        <div className="movie__details">
+                            <p>{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</p>
+                            <p>・</p>
+                            <p>{currentMovieDetail ? currentMovieDetail.release_date : ""}</p>
+                        </div>
+                        <div className="currentmovie__genres">
+                            {currentMovieDetail && currentMovieDetail.genres ?
                             currentMovieDetail.genres.map(genre => (
                                 <>
-                                    <span className="currentmovie__genre" id={genre.id}>
+                                    <p id={genre.id}>
                                         {genre.name}
-                                    </span>
+                                    </p>
                                 </>
                             ))
                             :
                             ""
                         }
                         </div>
-                    </div>
-                    <div className="currentmovie__detailRightBottom">
-                        <div className="synopsisText">Detail</div>
-                        <div className="currentmovie__description">{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
-                    </div>
+                            <h3>Overview</h3>
+                            <p>{currentMovieDetail ? currentMovieDetail.overview : ""}</p>
                 </div>
             </div>
         </div>
