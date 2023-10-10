@@ -112,6 +112,9 @@
         h3 {
             font-size: 1.25rem;
         }
+        p {
+            font-size: .75rem;
+        }
     }
     .currentmovie__genres {
         display: none;
@@ -131,7 +134,5 @@
     }
     .currentmovie__detail{
         bottom: 0;
-        width: 95%;
-        margin: 0 auto;
     }
 }

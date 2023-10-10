@@ -21,7 +21,7 @@ function Favourite() {
   return (
 
     <div className="favourite-wrap">
-      <h2>Favorite Movies</h2>
+      <h1>Favorite Movies</h1>
       {favs.length < 1 || favs == null ? (
         <p>
           No favorite movies. Return to the <Link to="/">home</Link> page to

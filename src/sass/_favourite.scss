@@ -51,22 +51,31 @@
     .more-info p {
         font-size: 1rem!important;
     }
+    .favourite-grid {
+        h2 {
+            font-size: 1.25rem;
+        }
+        p {
+            font-size: .75rem;
+        }
+    }
 }
 
 @media (max-width: 900px) {
     .favourite-wrap {
         width: 90%;
-        h2 {
-            font-size: 1.75rem;
-        }
     }
     .favourite-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .favourite-grid {
+        p {
+            font-size: .75rem;
+        }
+    }
 
 .fav-mobile {
-    // margin: 20px 30px 10px 30px;
     gap: 1rem;
     .mobile-img-container {
         position: relative;
@@ -84,12 +93,15 @@
             box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
         }
     }
-    }
+}
 }
 
 @media (max-width: 600px) {
     .favourite-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    .favourite-wrap h1 {
+        font-size: 2rem;
     }
 }
