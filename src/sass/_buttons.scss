@@ -42,9 +42,8 @@
     }
 }
 
-//mobile
-
-@media(max-width:730px) {
+//mobile 2 columns
+@media(max-width: $medium) {
     .form {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -58,12 +57,12 @@
     }
 }
 
-    @media(max-width:490px) {
-        .form {
-            width:80%;
-            .button {
-                margin-left: 0;
-                margin-bottom: 1.5rem;
-            }
+@media(max-width: $small) {
+    .form {
+        width:80%;
+        .button {
+            margin-left: 0;
+            margin-bottom: 1.5rem;
         }
+    }
 }

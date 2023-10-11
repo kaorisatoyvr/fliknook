@@ -120,7 +120,7 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: $small) {
     .header-logo-mobile {
         width: 10rem;
     }

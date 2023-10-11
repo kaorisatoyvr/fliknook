@@ -84,17 +84,34 @@
     }
 }
 
-//media queries 
-@media (max-width: 1024px){
+//responsive change text size
+@media (max-width: $large){
+    .currentmovie__detail {
+        width: 90%;
+    }
     .rate-favourite {
         align-items: center;
         img {
             width: 2.5rem;
         }
     }
+    .currentmovie__detailRight {
+        h2 {
+            font-size: 1.75rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: .75rem;
+        }
+    .currentmovie__genres {
+        margin: 0;
+    }
+    }
 }
 
-@media (max-width:730px){
+@media (max-width: $medium){
     .currentmovie__detail{
         display: block;
         text-align: center; 
@@ -128,11 +145,17 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $small) {
     .currentmovie__backdrop {
         display: none;
     }
     .currentmovie__detail{
+        width: 80%;
         bottom: 0;
+    }
+    .currentmovie__detailRight {
+        h2 {
+            font-size: 1.5rem;
+        }
     }
 }

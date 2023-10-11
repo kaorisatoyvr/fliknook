@@ -12,7 +12,6 @@
     }
     p {
         width: 80%;
-        // padding: 0 2rem 2rem 0;
     }
 }
 
@@ -22,11 +21,15 @@
     border-bottom: solid rgba(128, 128, 128, 0.359) 4px;
 }
 
-.tmdb img {
-    padding: 7rem 6rem 7rem 3rem;
+.fliknook-about img{
+    width: 200px;
 }
 
-@media (max-width: 1024px) {
+.tmdb img {
+    padding: 6rem 6rem 6rem 3rem;
+}
+
+@media (max-width: $large) {
 .about {
         width: 80%;
         display: block;
@@ -44,10 +47,10 @@
 } 
 .about-wrap {
     display: block;
-}
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: $small) {
     .about {
             h1, h2 {
                 font-size: 1.5rem;

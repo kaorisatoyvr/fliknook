@@ -33,7 +33,6 @@
   font-size: 4rem;
   margin-bottom: 0.4rem;
   text-align: left;
-
   p {
     margin: 0;
   }
@@ -60,9 +59,8 @@
   width: 50%;
 }
 
-//mobile
-
-@media (max-width:730px){
+// mobile
+@media (max-width: $medium){
 
   .posterImage__runtime{
     font-family: $poppins;
@@ -73,17 +71,16 @@
     padding: 2rem;
   }   
  
-.posterImage__title {
-  font-family: $poppins;
-  font-weight: 600;
-  font-size: 2.5rem;
-  margin-bottom: 0.4rem;
-  text-align: left;
-}
+  .posterImage__title {
+    font-family: $poppins;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+  }
 }
 
-@media (max-width:400px){
-
+@media (max-width: $small){
   .posterImage__runtime{
     font-size: 1rem;
   }
@@ -91,9 +88,7 @@
     padding: 1rem;
   }   
   .posterImage__title {
- 
     font-size: 1.5rem;
-
   }
 }
 

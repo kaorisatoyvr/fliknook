@@ -14,16 +14,17 @@
     }
    }
 }
+
 .heart-button {
     background-color: transparent;
     border: none;
     position: absolute;
     padding: .5rem;
     img {
-        // width: 3.5rem;
         box-shadow: none;
     }
 }
+
 .more-info p {
     font-size: 20px !important;
     padding: 2px;
@@ -32,7 +33,7 @@
 .favourite-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     h2 {
         text-wrap: wrap;
         font-size: 1.5rem;
@@ -61,7 +62,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: $large) {
     .favourite-wrap {
         width: 90%;
     }
@@ -74,29 +75,28 @@
             font-size: .75rem;
         }
     }
-
-.fav-mobile {
-    gap: 1rem;
-    .mobile-img-container {
-        position: relative;
-        .mobile-rate {
-            position: absolute;
-            margin: -1.5rem; 
-            font-weight: 700;      
-            right: 0;
-            z-index: 999;
-        }
-        img {
+    .fav-mobile {
+        gap: 1rem;
+        .mobile-img-container {
             position: relative;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+            .mobile-rate {
+                position: absolute;
+                margin: -1.5rem; 
+                font-weight: 700;      
+                right: 0;
+                z-index: 999;
+            }
+            img {
+                position: relative;
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+            }
         }
-    }
 }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $medium) {
     .favourite-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;

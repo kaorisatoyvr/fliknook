@@ -2,6 +2,7 @@ import React from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
 import logo from '../images/fliknook.svg';
 import tmdb from '../images/tmdb.svg';
+import fliknook from '../images/fliknook-about.png';
 
 function About() {
     const isDesktop = useMediaQuery('(min-width: 1024px)');
@@ -23,8 +24,8 @@ function About() {
                 <h2>Who We Are</h2>
                 <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
             </div>
-            <div className="about-logo">
-                <a href="/"><img src={logo} alt="logo of FlikNook" /></a>
+            <div className="fliknook-about">
+                <a href="/about"><img src={fliknook} alt="FlikNook" /></a>
             </div>
         </div>
         <div className="tmdb about-wrap">
@@ -54,7 +55,7 @@ function About() {
                     <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
                 </div>
                 <div className="about-logo">
-                    <a href="/"><img src={logo} alt="logo of FlikNook" /></a>
+                    <a href="/about"><img src={fliknook} alt="FlikNook" /></a>
                 </div>
             </div>
             <div className="tmdb about-wrap">

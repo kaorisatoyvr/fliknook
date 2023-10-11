@@ -9,6 +9,7 @@
     width: 95%;
     margin: 0 auto;
 }
+
 .img-container {
     position: relative;
     width: 100%;
@@ -27,9 +28,9 @@
     }   
     :hover {
         cursor: pointer;
-    }
-    
+    }  
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -54,12 +55,14 @@
     p {
         color: $white;
         margin-top: 5px;
+        font-weight: 600;
     }
     a {
         text-align: center;
         background-color: transparent;
     }
 } 
+
 .overview {
     display: -webkit-box;
     font-style: italic;;
@@ -67,9 +70,11 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
+
 .img-container:hover .overlay {
     opacity: 1;
 }
+
 .more-info {
     p{
         width: 60%;
@@ -81,18 +86,17 @@
     }
 }
 
-    .img-container {
-        position: relative;
-        max-width: 280px;
-        max-height: 435px;
-        img {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.2s;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
-        }
+.img-container {
+    position: relative;
+    max-width: 280px;
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.2s;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
     }
+}
 
 // favourite buttons
 .favorite-icon button{
@@ -129,34 +133,34 @@
     }
 }
 
-    @media (max-width: 1300px) {
-        .movie-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 1.5rem;
-        }
+// responsive 4 columns
+@media (max-width: $xLarge) {
+    .movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.5rem;
     }
+}
 
-    @media (max-width: 1024px) {
-        .mobile-movie-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-        .CircularProgressbar {
-            width: 90%!important;
-        }
+// responsive 3 columns
+@media (max-width: $large) {
+    .mobile-movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
+    .CircularProgressbar {
+        width: 90%!important;
+    }
+}
 
-    @media (max-width: 700px) {
-        .mobile-movie-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        // .favorite-button {
-        //     width: 40px;
-        // }
-        .CircularProgressbar {
-            width: 80%!important;
-        }
+// responsive 2 columns
+@media (max-width: $medium) {
+    .mobile-movie-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
+    .CircularProgressbar {
+        width: 80%!important;
+    }
+}

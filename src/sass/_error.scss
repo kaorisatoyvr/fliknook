@@ -1,7 +1,6 @@
 @use "variables" as *;
 
 .error__container{
- 
     height: 100vh;
     text-align: center;
 }
@@ -12,12 +11,13 @@
     justify-content: center;
     flex-direction: column;
 }
+
 .error__img-desktop{ 
    width:30%;
 }
+
 .error__img-mobile{ 
-    width:60vw;
-    
+    width:60vw; 
  }
 
  .error {
@@ -38,16 +38,12 @@
     cursor: pointer;
     transition: background-color 0.3s ease; 
     text-transform: uppercase;
-    
-
     &:hover{
-        background-color:$white;
-        
+        background-color:$white;        
     }
 }
-    //mobile
 
-    
+    //mobile   
     .error__btn-mobile{
         padding: 0.5rem 1rem;
         background-color: #D9CEFE;
@@ -60,9 +56,4 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
         text-transform: uppercase;
-
     }
-     
-  
-
-
