@@ -38,6 +38,7 @@ let eight = carousel?.slice(0, 8);
         transitionTime={3000}
         infiniteLoop={true}
         showStatus={false}
+        
       >
         {eight.map((movie) => (
           <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${movie.id}`} key={movie.id}>

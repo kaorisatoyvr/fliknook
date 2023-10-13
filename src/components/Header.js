@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo2 from '../images/fliknook-logo-long.svg';
-import logo from '../images/fliknook.svg';
+
 import useMediaQuery from '../hooks/useMediaQuery';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
