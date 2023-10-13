@@ -12,7 +12,7 @@ function About() {
         <div className="about">
         <div className="welcome about-wrap">
             <div className="about-logo">
-                <a href="/"><img src={logo} alt="logo of FlikNook" /></a>
+                <a href="/fliknook"><img src={logo} alt="logo of FlikNook" /></a>
             </div>
             <div>
                 <h1>Welcome to FlikNook</h1>
@@ -25,7 +25,7 @@ function About() {
                 <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
             </div>
             <div className="fliknook-about">
-                <a href="/about"><img src={fliknook} alt="FlikNook" /></a>
+                <a href="/fliknook/about"><img src={fliknook} alt="FlikNook" /></a>
             </div>
         </div>
         <div className="tmdb about-wrap">
@@ -46,7 +46,7 @@ function About() {
                     <p>Welcome to FlikNook, your ultimate destination for all things movies! We're passionate about the world of cinema, and we're here to provide you with an exceptional movie-watching experience. Our mission is to make it easier than ever for you to discover, explore, and enjoy your favorite films.</p>
                 </div>
                 <div className="about-logo">
-                    <a href="/"><img src={logo} alt="logo of FlikNook" /></a>
+                    <a href="/fliknook"><img src={logo} alt="logo of FlikNook" /></a>
                 </div>
             </div>
             <div className="who-we-are about-wrap">
@@ -55,7 +55,7 @@ function About() {
                     <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
                 </div>
                 <div className="about-logo">
-                    <a href="/about"><img src={fliknook} alt="FlikNook" /></a>
+                    <a href="/fliknook/about"><img src={fliknook} alt="FlikNook" /></a>
                 </div>
             </div>
             <div className="tmdb about-wrap">
