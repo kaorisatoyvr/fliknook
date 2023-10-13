@@ -2,8 +2,7 @@ import React from 'react';
 import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
-{/* Progress bar: https://www.npmjs.com/package/react-circular-progressbar */}
-// test
+// Progress bar: https://www.npmjs.com/package/react-circular-progressbar
 function Rate({ movie }) {
     return(
     
