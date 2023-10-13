@@ -56,7 +56,7 @@ function About() {
                     <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
                 </div>
                 <div className="about-logo">
-                    <a href="/fliknook/about"><img src={fliknook} alt="FlikNook" /></a>
+                    <Link to="/fliknook"><img src={fliknook} alt="FlikNook" /></Link>
                 </div>
             </div>
             <div className="tmdb about-wrap">
