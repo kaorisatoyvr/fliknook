@@ -3,7 +3,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import logo from '../images/fliknook.svg';
 import tmdb from '../images/tmdb.svg';
 import fliknook from '../images/fliknook-about.png';
-
+import { Link } from 'react-router-dom';
 
 function About() {
     const isDesktop = useMediaQuery('(min-width: 1024px)');
@@ -47,7 +47,7 @@ function About() {
                     <p>Welcome to FlikNook, your ultimate destination for all things movies! We're passionate about the world of cinema, and we're here to provide you with an exceptional movie-watching experience. Our mission is to make it easier than ever for you to discover, explore, and enjoy your favorite films.</p>
                 </div>
                 <div className="about-logo">
-                <a href="/fliknook/about"><img src={fliknook} alt="FlikNook" /></a>
+                    <Link to="/"><img src={logo} alt="logo of FlikNook" /></Link>
                 </div>
             </div>
             <div className="who-we-are about-wrap">
@@ -56,7 +56,7 @@ function About() {
                     <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
                 </div>
                 <div className="about-logo">
-                <a href="/fliknook/about"><img src={fliknook} alt="FlikNook" /></a>
+                    <Link to="/about"><img src={fliknook} alt="FlikNook" /></Link>
                 </div>
             </div>
             <div className="tmdb about-wrap">
