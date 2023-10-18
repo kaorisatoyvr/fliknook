@@ -13,7 +13,7 @@ function About() {
         <div className="about">
         <div className="welcome about-wrap">
             <div className="about-logo">
-                <a href="/fliknook"><img src={logo} alt="logo of FlikNook" /></a>
+                <Link to="/"><img src={logo} alt="logo of FlikNook" /></Link>
             </div>
             <div>
                 <h1>Welcome to FlikNook</h1>
@@ -26,12 +26,12 @@ function About() {
                 <p>FlikNook is a dedicated team of film enthusiasts who understand the magic that unfolds on the silver screen. We're committed to creating a platform that not only celebrates the art of filmmaking but also simplifies the process of finding and enjoying the movies you love.</p>
             </div>
             <div className="fliknook-about">
-                <a href="/fliknook/about"><img src={fliknook} alt="FlikNook" /></a>
+                <Link to="/about"><img src={fliknook} alt="FlikNook" /></Link>
             </div>
         </div>
         <div className="tmdb about-wrap">
             <div>
-                <a href="https://www.themoviedb.org/?language=en-CA"><img src={tmdb} alt="logo of TMDB" /></a>
+                <Link to="https://www.themoviedb.org/?language=en-CA"><img src={tmdb} alt="logo of TMDB" /></Link>
             </div>
             <div>
                 <h2>The Power of TMDB Integration</h2>
@@ -65,7 +65,7 @@ function About() {
                     <p>"FlikNook's core is our integration with TMDB, the world's most comprehensive movie database. It forms the backbone of our platform, granting you access to a vast array of movie details, from cast and crew to plot summaries, trailers, and more. With TMDB's data, we empower you to make informed decisions about your next watch."</p>
                 </div>
                 <div>
-                    <a href="https://www.themoviedb.org/?language=en-CA"><img src={tmdb} alt="logo of TMDB" /></a>
+                    <Link to="https://www.themoviedb.org/?language=en-CA"><img src={tmdb} alt="logo of TMDB" /></Link>
                 </div>
             </div>
         </div>

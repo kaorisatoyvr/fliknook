@@ -15,7 +15,7 @@ import DarkMode from './components/DarkMode';
 
 function AppRouter() {
   return (
-    <BrowserRouter basename='/fliknook'>
+    <BrowserRouter basename={'/fliknook'}>
       <div className="App">
         {/* add Header Components */}
         <Header />

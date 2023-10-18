@@ -159,6 +159,9 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+        h2 {
+            font-size: 1.25rem;
+        }
     }
     .CircularProgressbar {
         width: 80%!important;

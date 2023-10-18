@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo2 from '../images/fliknook-logo-long.svg';
-
+import { Link } from 'react-router-dom';
 import useMediaQuery from '../hooks/useMediaQuery';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
@@ -26,7 +26,7 @@ function Header() {
             {isDesktop ?
                 <div className="desktop-header">
                     <h1 className="header__title">
-                        <a href="/fliknook"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></a>
+                        <Link to="/"><img className="header-logo" src={logo2} alt="logo of FlikNook" /></Link>
                     </h1>
                     <nav className="desktop-nav">
                         <ul>
@@ -45,7 +45,7 @@ function Header() {
                 </div>
                 : <div className="mobile-header">
                     <h1 className="mobile__header__title">
-                        <a href="/fliknook"><img className="header-logo-mobile" src={logo2} alt="logo of FlikNook" /></a>
+                        <Link to="/"><img className="header-logo-mobile" src={logo2} alt="logo of FlikNook" /></Link>
                     </h1>
                     {/* https://hamburger-react.netlify.app/ */}
                     <Hamburger className="hamburger" toggled={isOpen} toggle={toggleMobileMenu}
@@ -67,10 +67,10 @@ function Header() {
                                     <NavLink activeClassName="active" to="/" onClick={closeMobileMenu} >Home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/about" onClick={closeMobileMenu} >About</NavLink>
+                                    <NavLink activeClassName="active" to="/about" onClick={closeMobileMenu} >About</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/favourite" onClick={closeMobileMenu} >Favourite</NavLink>
+                                    <NavLink activeClassName="active" to="/favourite" onClick={closeMobileMenu} >Favourite</NavLink>
                                 </li>
                             </ul>
 
